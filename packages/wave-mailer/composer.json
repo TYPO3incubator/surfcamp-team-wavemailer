@@ -1,0 +1,19 @@
+{
+  "name": "beffp/wave-mailer",
+  "type": "typo3-cms-extension",
+  "description": "Newsletter mailing management",
+  "license": "GPL-2.0-or-later",
+  "require": {
+    "typo3/cms-core": "^14.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Beffp\\WaveMailer\\": "Classes/"
+    }
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "wave_mailer"
+    }
+  }
+}
