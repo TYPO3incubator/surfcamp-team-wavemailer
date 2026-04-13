@@ -1,0 +1,14 @@
+categories:
+  WaveMailer:
+    label: 'Wave Mailer'
+  WaveMailer.pages:
+    label: 'Pages'
+    parent: WaveMailer
+
+settings:
+  waveMailer.confirmationPage:
+    label: 'Confirmation page'
+    type: page
+    category: WaveMailer.pages
+    description: 'Page to redirect after a successful registration'
+    default: 0

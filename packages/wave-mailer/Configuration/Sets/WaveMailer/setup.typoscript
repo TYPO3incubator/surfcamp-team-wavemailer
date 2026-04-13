@@ -1,0 +1,5 @@
+plugin.tx_wavemailer {
+	settings {
+		confirmationPage = {$waveMailer.confirmationPage}
+	}
+}

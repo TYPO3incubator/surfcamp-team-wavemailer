@@ -27,6 +27,11 @@
                 <source>Double opt-in</source>
             </segment>
         </unit>
+        <unit id="tx_wavemailer_domain_model_subscriber.double_opt_in_token">
+            <segment>
+                <source>Double opt-in token</source>
+            </segment>
+        </unit>
         <unit id="tx_wavemailer_domain_model_subscriber.double_opt_in.item.label">
             <segment>
                 <source>Double opt-in</source>
@@ -46,6 +51,16 @@
         <unit id="tx_wavemailer_domain_model_subscriptiongroup.name">
             <segment>
                 <source>Name</source>
+            </segment>
+        </unit>
+        <unit id="subscriptionform.title">
+            <segment>
+                <source>Subscription form</source>
+            </segment>
+        </unit>
+        <unit id="subscriptionform.description">
+            <segment>
+                <source>Add a form to subscribe to a newsletter in the frontend</source>
             </segment>
         </unit>
         <unit id="tx_wavemailer.pagetype">
