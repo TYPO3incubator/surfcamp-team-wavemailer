@@ -63,5 +63,10 @@
                 <source>Add a form to subscribe to a newsletter in the frontend</source>
             </segment>
         </unit>
+        <unit id="error.Subscriber.invalidEmail">
+            <segment>
+                <source>The given E-Mail address is not a valid E-Mail.</source>
+            </segment>
+        </unit>
     </file>
 </xliff>
