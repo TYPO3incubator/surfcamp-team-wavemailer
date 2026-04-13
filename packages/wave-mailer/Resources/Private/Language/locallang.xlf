@@ -48,5 +48,15 @@
                 <source>Name</source>
             </segment>
         </unit>
+        <unit id="subscriptionform.title">
+            <segment>
+                <source>Subscription form</source>
+            </segment>
+        </unit>
+        <unit id="subscriptionform.description">
+            <segment>
+                <source>Add a form to subscribe to a newsletter in the frontend</source>
+            </segment>
+        </unit>
     </file>
 </xliff>
