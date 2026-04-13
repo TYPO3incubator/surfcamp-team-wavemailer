@@ -48,5 +48,10 @@
                 <source>Name</source>
             </segment>
         </unit>
+        <unit id="tx_wavemailer.pagetype">
+            <segment>
+                <source>Newsletter</source>
+            </segment>
+        </unit>
     </file>
 </xliff>

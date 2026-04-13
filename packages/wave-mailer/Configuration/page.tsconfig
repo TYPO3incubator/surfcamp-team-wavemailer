@@ -1,0 +1,22 @@
+mod.web_layout.BackendLayouts {
+  WaveMailer {
+    title = Wave Mailer Newsletter Layout
+    config {
+      backend_layout {
+        colCount = 1
+        rowCount = 1
+        rows {
+          1 {
+            columns {
+              1 {
+                name = Newsletter Content
+                colPos = 0
+              }
+            }
+          }
+        }
+      }
+    }
+    icon = EXT:wave_mailer/Resources/Public/Icons/Extension.svg
+  }
+}
