@@ -67,7 +67,8 @@
             <segment>
                 <source>Newsletter</source>
             </segment>
-        </unit><unit id="tx_wavemailer.backendTitle">
+        </unit>
+        <unit id="tx_wavemailer.backendTitle">
             <segment>
                 <source>Newsletter Content</source>
             </segment>
