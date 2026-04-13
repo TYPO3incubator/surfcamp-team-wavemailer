@@ -5,7 +5,6 @@
 /vendor/
 /public/
 /var/
-composer.lock
 
 # TYPO3 generated config
 /config/sites/
