@@ -9,7 +9,7 @@ mod.web_layout.BackendLayouts {
           1 {
             columns {
               1 {
-                name = Newsletter Content
+                name = LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:tx_wavemailer.backendTitle
                 colPos = 0
               }
             }
