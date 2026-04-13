@@ -34,13 +34,13 @@ return [
         'first_name' => [
             'label' => 'LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:tx_wavemailer_domain_model_subscriber.first_name',
             'config' => [
-                'type' => 'text',
+                'type' => 'input',
             ],
         ],
         'last_name' => [
             'label' => 'LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:tx_wavemailer_domain_model_subscriber.last_name',
             'config' => [
-                'type' => 'text',
+                'type' => 'input',
             ],
         ],
         'double_opt_in' => [
@@ -52,6 +52,13 @@ return [
                         'label' => 'LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:tx_wavemailer_domain_model_subscriber.double_opt_in.item.label',
                     ],
                 ],
+            ],
+        ],
+        'double_opt_in_token' => [
+            'label' => 'LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:tx_wavemailer_domain_model_subscriber.double_opt_in_token',
+            'config' => [
+                'type' => 'input',
+                'readOnly' => true
             ],
         ],
         'subscription_groups' => [
