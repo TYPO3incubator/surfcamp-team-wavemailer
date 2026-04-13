@@ -22,6 +22,8 @@ class Subscriber extends AbstractEntity
 
     private bool $doubleOptIn;
 
+    private string $doubleOptInToken;
+
     public function __construct()
     {
         $this->subscriptionGroups = new ObjectStorage();
@@ -75,5 +77,15 @@ class Subscriber extends AbstractEntity
     public function setDoubleOptIn(bool $doubleOptIn): void
     {
         $this->doubleOptIn = $doubleOptIn;
+    }
+
+    public function getDoubleOptInToken(): string
+    {
+        return $this->doubleOptInToken;
+    }
+
+    public function setDoubleOptInToken(string $doubleOptInToken): void
+    {
+        $this->doubleOptInToken = $doubleOptInToken;
     }
 }
