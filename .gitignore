@@ -20,10 +20,6 @@
 # Composer auth (may contain tokens)
 /auth.json
 
-# Custom extensions are user-managed
-/packages/*
-!/packages/.gitkeep
-
 # OS files
 .DS_Store
 Thumbs.db
