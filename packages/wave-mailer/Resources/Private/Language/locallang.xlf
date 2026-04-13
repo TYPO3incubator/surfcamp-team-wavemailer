@@ -63,5 +63,15 @@
                 <source>Add a form to subscribe to a newsletter in the frontend</source>
             </segment>
         </unit>
+        <unit id="tx_wavemailer.pagetype">
+            <segment>
+                <source>Newsletter</source>
+            </segment>
+        </unit>
+        <unit id="tx_wavemailer.backendTitle">
+            <segment>
+                <source>Newsletter Content</source>
+            </segment>
+        </unit>
     </file>
 </xliff>
