@@ -45,7 +45,6 @@ class SubscriptionController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
 
         $uri = $this->uriBuilder->setTargetPageUid($this->settings['confirmationPage'])->build();
 
-        return $this->responseFactory->createResponse(307)
-            ->withHeader('Location', $uri);
+        return $this->redirectToUri($uri);
     }
 }
