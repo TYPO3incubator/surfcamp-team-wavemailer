@@ -19,4 +19,13 @@ defined('TYPO3') or die();
         // plugin description, as visible in the new content element wizard
         'LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:subscriptionform.description',
     );
+
+    ExtensionUtility::registerPlugin(
+        'WaveMailer',
+        'ManageSubscription',
+        'Manage Subscription',
+        'form-fieldset',
+        'default',
+        'Manage newsletter subscription groups and unsubscribe',
+    );
 })();

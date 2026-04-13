@@ -9,12 +9,12 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 class SubscriptionGroup extends AbstractEntity
 {
-    private string $name;
+    protected string $name;
 
     /**
      * @var ObjectStorage<Subscriber>
      */
-    private ObjectStorage $subscribers;
+    protected ObjectStorage $subscribers;
 
     public function __construct()
     {
