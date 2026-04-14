@@ -3,10 +3,11 @@
 namespace Beffp\WaveMailer\Controller;
 
 use Beffp\WaveMailer\Domain\Model\Subscriber;
-use Beffp\WaveMailer\Domain\Model\SubscriptionGroup;
 use Beffp\WaveMailer\Domain\Repository\SubscriberRepository;
 use Beffp\WaveMailer\Domain\Repository\SubscriptionGroupRepository;
+use Beffp\WaveMailer\Domain\Validation\SubscriberValidator;
 use Psr\Http\Message\ResponseInterface;
+use TYPO3\CMS\Extbase\Attribute\Validate;
 use TYPO3\CMS\Extbase\Persistence\Exception\IllegalObjectTypeException;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use TYPO3\CMS\Extbase\Persistence\Exception\UnknownObjectException;
@@ -21,12 +22,12 @@ class ManageSubscriptionController extends ActionController
     {
     }
 
-    public function indexAction(?Subscriber $subscriber = null): ResponseInterface
+    public function indexAction(#[Validate(validator: SubscriberValidator::class)] ?Subscriber $subscriber = null): ResponseInterface
     {
         $checkedGroups = [];
         if ($subscriber !== null) {
-            foreach ($subscriber->getSubscriptionGroups() as $g) {
-                $checkedGroups[$g->getUid()] = true;
+            foreach ($subscriber->getSubscriptionGroups() as $group) {
+                $checkedGroups[$group->getUid()] = true;
             }
         }
 
@@ -51,7 +52,11 @@ class ManageSubscriptionController extends ActionController
         ]);
 
         if ($subscriber === null) {
-            return $this->htmlResponse('Subscriber not found.')->withStatus(404);
+            throw new \RuntimeException('No subscriber found for the given email address.', 1776159682);
+        }
+
+        if ($subscriber->getCancellationDate()) {
+            throw new \RuntimeException('This subscription has been cancelled.', 1776159683);
         }
 
         $newSubscriptionGroups = new ObjectStorage();
@@ -80,7 +85,11 @@ class ManageSubscriptionController extends ActionController
         ]);
 
         if ($subscriber === null) {
-            return $this->htmlResponse('Subscriber not found.')->withStatus(404);
+            throw new \RuntimeException('No subscriber found for the given email address.', 1776159682);
+        }
+
+        if ($subscriber->getCancellationDate()) {
+            throw new \RuntimeException('This subscription has already been cancelled.', 1776159683);
         }
 
         $subscriber->setCancellationDate(new \DateTime());
