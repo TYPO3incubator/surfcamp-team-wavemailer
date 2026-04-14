@@ -9,6 +9,8 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 class Subscriber extends AbstractEntity
 {
+    protected bool $hidden;
+
     protected string $firstName;
 
     protected string $lastName;
@@ -29,6 +31,16 @@ class Subscriber extends AbstractEntity
     public function __construct()
     {
         $this->subscriptionGroups = new ObjectStorage();
+    }
+
+    public function isHidden(): bool
+    {
+        return $this->hidden;
+    }
+
+    public function setHidden(bool $hidden): void
+    {
+        $this->hidden = $hidden;
     }
 
     public function getFirstName(): string
