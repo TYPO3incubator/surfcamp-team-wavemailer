@@ -2,31 +2,30 @@
 
 namespace Beffp\WaveMailer\Controller;
 
+use Beffp\WaveMailer\Domain\Repository\SubscriberRepository;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 class DoubleOptInController extends ActionController
 {
-    protected $userRepository;
-    public function injectUserRepository(\Beffp\WaveMailer\Domain\Repository\UserRepository $userRepository)
-
+    public function __construct(protected readonly SubscriberRepository $subscriberRepository)
     {
-        $this->userRepository = $userRepository;
-    }
-    public function confirmAction(string $hash = null){
-        if ($hash === null) {
-            return 'fehler';
-        }
-        $user = $this->userRepository->findOneByDoubleOptInHash($hash);
-        if ($user === null) {
-            return 'fehler';
-        }
-        $user->setConfirmed(true);
-        $user->setDoubleOptInHash(null);
-
-        $this->userRepository->update($user);
-        return 'erfolgreich bestätigt';
-
     }
 
+    public function confirmAction(string $hash) {
+        if ($hash === '') {
+            throw new \InvalidArgumentException('Hash is empty', 1776157052);
+        }
 
+        $subscriber = $this->subscriberRepository->findOneBy(['doubleOptInHash' => $hash]);
+
+        if ($subscriber === null) {
+            $this->view->assign('message', 'doubleOptIn.userNotFound');
+        } else {
+            $subscriber->setDoubleOptIn(true);
+            $this->subscriberRepository->update($subscriber);
+            $this->view->assign('message', 'doubleOptIn.confirmed');
+        }
+
+        return $this->htmlResponse();
+    }
 }
