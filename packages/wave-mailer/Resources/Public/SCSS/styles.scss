@@ -16,5 +16,11 @@
 
   .form-submit {
     color: #FFF;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: #FFF;
+    }
   }
 }
