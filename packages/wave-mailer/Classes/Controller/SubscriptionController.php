@@ -7,23 +7,22 @@ use Beffp\WaveMailer\Domain\Repository\SubscriberRepository;
 use Beffp\WaveMailer\Domain\Validation\SubscriberValidator;
 use Beffp\WaveMailer\Exception\SettingsException;
 use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
+use TYPO3\CMS\Core\Domain\RecordFactory;
+
 use TYPO3\CMS\Extbase\Attribute\Validate;
 use TYPO3\CMS\Extbase\Persistence\Exception\IllegalObjectTypeException;
 
 class SubscriptionController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
-
-    public function __construct(protected readonly SubscriberRepository $subscriberRepository)
-    {
-    }
-
-    /**
-     * renders the subscription form
-     *
-     * @return ResponseInterface
-     */
+    public function __construct(
+        protected RecordFactory $recordFactory,
+    ) {}
     public function formAction(): ResponseInterface
     {
+        $cObj = $this->request->getAttribute('currentContentObject');
+        $record = $this->recordFactory->createResolvedRecordFromDatabaseRow('tt_content', $cObj->data);
+        $this->view->assign('record', $record);
         return $this->htmlResponse();
     }
 

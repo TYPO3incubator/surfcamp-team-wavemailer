@@ -1,0 +1,34 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+
+<f:layout name="Content/Default"/>
+
+<f:section name="Main">
+	<f:if condition="{settings.includeCSS}">
+		<f:asset.css identifier="wavemailer" href="EXT:wave_mailer/Resources/Public/SCSS/styles.css"/>
+	</f:if>
+	<div class="tx_wavemailer">
+		<form class="subscription-form">
+			<div class="subscription-form-fieldwrap">
+				<label for="subscription_field_given-name" class="form-label">
+					Nachname
+				</label>
+				<input type="text" id="subscription_field_family-name" autocomplete="family-name" class="form-control">
+			</div>
+			<div class="subscription-form-fieldwrap">
+				<label for="subscription_field_given-name" class="form-label">
+					Vorname
+				</label>
+				<input type="text" id="subscription_field_given-name" autocomplete="given-name" class="form-control">
+			</div>
+			<div class="subscription-form-fieldwrap">
+				<label for="subscription_field_email" class="form-label">
+					Email
+				</label>
+				<input type="email" id="subscription_field_email" autocomplete="email" class="form-control">
+			</div>
+			<button type="submit" class="button form-submit">Anmelden</button>
+		</form>
+	</div>
+</f:section>
+</html>

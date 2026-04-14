@@ -1,5 +1,21 @@
 plugin.tx_wavemailer {
+	view {
+		templateRootPaths {
+			10 = EXT:wave_mailer/Resources/Private/Templates
+		}
+		partialRootPaths < lib.contentElement.partialRootPaths
+		partialRootPaths {
+			100 = EXT:wave_mailer/Resources/Private/Partials
+		}
+
+		layoutRootPaths < lib.contentElement.layoutRootPaths
+		layoutRootPaths {
+			100 = EXT:wave_mailer/Resources/Private/Layouts
+		}
+	}
+
 	settings {
+		includeCSS = {$waveMailer.includeCSS}
 		confirmationPage = {$waveMailer.confirmationPage}
 	}
 }
