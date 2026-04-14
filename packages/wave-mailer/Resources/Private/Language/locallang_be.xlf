@@ -21,11 +21,6 @@
                 <source>Last name</source>
             </segment>
         </unit>
-        <unit id="tx_wavemailer_domain_model_subscriber.double_opt_in">
-            <segment>
-                <source>Double opt-in</source>
-            </segment>
-        </unit>
         <unit id="tx_wavemailer_domain_model_subscriber.double_opt_in_token">
             <segment>
                 <source>Double opt-in token</source>
