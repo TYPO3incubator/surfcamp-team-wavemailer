@@ -32,9 +32,18 @@ defined('TYPO3') or die();
         ],
     ];
 
+    $GLOBALS['TCA']['pages']['columns']['tx_wavemailer_send_date'] = [
+        'label' => 'LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:pages.tx_wavemailer_send_date',
+        'config' => [
+            'type' => 'datetime',
+            'format' => 'datetime',
+            'default' => 0,
+        ],
+    ];
+
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
         'pages',
-        'tx_wavemailer_subscription_groups',
+        'tx_wavemailer_subscription_groups,tx_wavemailer_send_date',
         $customPageDoktype,
         'after:nav_title'
     );
@@ -46,7 +55,7 @@ defined('TYPO3') or die();
         ],
         'wave_mailer' => [
             'title' => 'LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:pages.wizard.wave_mailer_step',
-            'fields' => ['tx_wavemailer_subscription_groups'],
+            'fields' => ['tx_wavemailer_subscription_groups', 'tx_wavemailer_send_date'],
             'after' => ['setup'],
         ],
     ];
