@@ -4,7 +4,7 @@ namespace Beffp\WaveMailer\Controller;
 
 use Beffp\WaveMailer\Domain\Model\Subscriber;
 use Beffp\WaveMailer\Domain\Repository\SubscriberRepository;
-use Beffp\WaveMailer\Domain\Validator\SubscriberValidator;
+use Beffp\WaveMailer\Domain\Validation\SubscriberValidator;
 use Beffp\WaveMailer\Exception\SettingsException;
 use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Extbase\Attribute\Validate;

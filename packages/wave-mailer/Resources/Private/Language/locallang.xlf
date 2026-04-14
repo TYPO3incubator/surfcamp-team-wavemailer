@@ -41,6 +41,11 @@
                 <source>Subscription groups (Topics)</source>
             </segment>
         </unit>
+        <unit id="tx_wavemailer_domain_model_subscriber.cancellation_date">
+            <segment>
+                <source>Cancellation date</source>
+            </segment>
+        </unit>
 
         <unit id="tx_wavemailer_domain_model_subscriptiongroup">
             <segment>
@@ -75,6 +80,18 @@
         <unit id="tx_wavemailer.backendTitle">
             <segment>
                 <source>Newsletter Content</source>
+            </segment>
+        </unit>
+
+        <unit id="tx_wavemailer.plugin.manage_subscription.title">
+            <segment>
+                <source>Manage subscription form</source>
+            </segment>
+        </unit>
+
+        <unit id="tx_wavemailer.plugin.manage_subscription.description">
+            <segment>
+                <source>A form to select different topics or unsubscribe.</source>
             </segment>
         </unit>
     </file>

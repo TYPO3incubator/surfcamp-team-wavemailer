@@ -71,10 +71,17 @@ return [
                 'MM_opposite_field' => 'subscribers'
             ],
         ],
+        'cancellation_date' => [
+            'label' => 'LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:tx_wavemailer_domain_model_subscriber.cancellation_date',
+            'config' => [
+                'type' => 'datetime',
+                'readOnly' => true,
+            ],
+        ],
     ],
     'types' => [
         '0' => [
-            'showitem' => 'email, first_name, last_name, double_opt_in, subscription_groups',
+            'showitem' => 'email, first_name, last_name, double_opt_in, subscription_groups, cancellation_date',
         ],
     ],
 ];
