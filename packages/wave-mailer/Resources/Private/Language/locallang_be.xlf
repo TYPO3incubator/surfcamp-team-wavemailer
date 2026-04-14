@@ -122,5 +122,15 @@
                 <source>Access</source>
             </segment>
         </unit>
+        <unit id="tx_wavemailer.plugin.settings">
+            <segment>
+                <source>Settings</source>
+            </segment>
+        </unit>
+        <unit id="tx_wavemailer.plugin.subscriptionGroups">
+            <segment>
+                <source>Select subscription groups (leave empty to show all)</source>
+            </segment>
+        </unit>
     </file>
 </xliff>
