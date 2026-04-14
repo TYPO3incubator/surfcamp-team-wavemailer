@@ -72,5 +72,40 @@
                 <source>Newsletter Content</source>
             </segment>
         </unit>
+        <unit id="contentElement.title">
+            <segment>
+                <source>Newsletter Text &amp; Media</source>
+            </segment>
+        </unit>
+        <unit id="contentElement.description">
+            <segment>
+                <source>A text and media element optimized for display in email clients.</source>
+            </segment>
+        </unit>
+        <unit id="contentElement.header">
+            <segment>
+                <source>Header</source>
+            </segment>
+        </unit>
+        <unit id="contentElement.text">
+            <segment>
+                <source>Text</source>
+            </segment>
+        </unit>
+        <unit id="tabs.general">
+            <segment>
+                <source>General</source>
+            </segment>
+        </unit>
+        <unit id="tabs.media">
+            <segment>
+                <source>Image</source>
+            </segment>
+        </unit>
+        <unit id="tabs.access">
+            <segment>
+                <source>Access</source>
+            </segment>
+        </unit>
     </file>
 </xliff>
