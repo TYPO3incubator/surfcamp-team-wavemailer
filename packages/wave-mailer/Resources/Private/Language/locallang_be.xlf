@@ -107,5 +107,15 @@
                 <source>Access</source>
             </segment>
         </unit>
+        <unit id="pages.tx_wavemailer_subscription_groups">
+            <segment>
+                <source>Subscription Groups</source>
+            </segment>
+        </unit>
+        <unit id="pages.wizard.wave_mailer_step">
+            <segment>
+                <source>Subscription Groups</source>
+            </segment>
+        </unit>
     </file>
 </xliff>
