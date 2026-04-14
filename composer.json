@@ -27,7 +27,7 @@
     "typo3/cms-felogin": "@dev",
     "typo3/cms-filelist": "@dev",
     "typo3/cms-fluid": "@dev",
-    "typo3/cms-fluid-styled-content": "@dev",
+    "typo3/cms-fluid-styled-content": "^14.3@dev",
     "typo3/cms-form": "@dev",
     "typo3/cms-frontend": "@dev",
     "typo3/cms-impexp": "@dev",

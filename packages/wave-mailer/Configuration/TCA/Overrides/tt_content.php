@@ -1,5 +1,8 @@
 <?php
 
+declare(strict_types=1);
+
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
 defined('TYPO3') or die();
@@ -19,4 +22,44 @@ defined('TYPO3') or die();
         // plugin description, as visible in the new content element wizard
         'LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:subscriptionform.description',
     );
+
+    $contentType = 'wavemailer_textmedia';
+
+    ExtensionManagementUtility::addTcaSelectItem(
+        'tt_content',
+        'CType',
+        [
+            'label' => 'LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:contentElement.title',
+            'description' => 'LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:contentElement.description',
+            'value' => $contentType,
+            'icon'  => 'content-textpic',
+            'group' => 'default',
+        ]
+    );
+
+    $GLOBALS['TCA']['tt_content']['types'][$contentType] = [
+        'showitem' => '
+            --div--;LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:tabs.general,
+            --palette--;;general,
+            header;LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:contentElement.header,
+            bodytext;LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:contentElement.text;--palette--;;richtext,
+            --div--;LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:tabs.media,
+            assets,
+            --div--;LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:tabs.access,
+            --palette--;;hidden,
+            --palette--;;access,
+        ',
+        'columnsOverrides' => [
+            'bodytext' => [
+                'config' => [
+                    'enableRichtext' => true,
+                ]
+            ],
+            'assets' => [
+                'config' => [
+                    'maxitems' => 1
+                ]
+            ]
+        ]
+    ];
 })();
