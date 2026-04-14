@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Beffp\WaveMailer\Domain\Validator;
+namespace Beffp\WaveMailer\Domain\Validation;
 
 use Beffp\WaveMailer\Domain\Model\Subscriber;
 use Beffp\WaveMailer\Service\SubscriberValidationService;
