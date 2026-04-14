@@ -1,24 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en">
     <file id="f1">
-        <unit id="subscription.form.label.lastName">
+        <unit id="tx_wavemailer_domain_model_subscriber">
             <segment>
-                <source>Last name</source>
+                <source>Subscriber</source>
             </segment>
         </unit>
-        <unit id="subscription.form.label.firstName">
-            <segment>
-                <source>First name</source>
-            </segment>
-        </unit>
-        <unit id="subscription.form.label.email">
+        <unit id="tx_wavemailer_domain_model_subscriber.email">
             <segment>
                 <source>Email</source>
             </segment>
         </unit>
-        <unit id="subscription.form.button.submit">
+        <unit id="tx_wavemailer_domain_model_subscriber.first_name">
             <segment>
-                <source>Subscribe</source>
+                <source>First name</source>
+            </segment>
+        </unit>
+        <unit id="tx_wavemailer_domain_model_subscriber.last_name">
+            <segment>
+                <source>Last name</source>
+            </segment>
+        </unit>
+        <unit id="tx_wavemailer_domain_model_subscriber.double_opt_in">
+            <segment>
                 <source>Double opt-in</source>
             </segment>
         </unit>
@@ -35,11 +39,6 @@
         <unit id="tx_wavemailer_domain_model_subscriber.subscription_groups">
             <segment>
                 <source>Subscription groups (Topics)</source>
-            </segment>
-        </unit>
-        <unit id="tx_wavemailer_domain_model_subscriber.cancellation_date">
-            <segment>
-                <source>Cancellation date</source>
             </segment>
         </unit>
 
@@ -76,18 +75,6 @@
         <unit id="tx_wavemailer.backendTitle">
             <segment>
                 <source>Newsletter Content</source>
-            </segment>
-        </unit>
-
-        <unit id="tx_wavemailer.plugin.manage_subscription.title">
-            <segment>
-                <source>Manage subscription form</source>
-            </segment>
-        </unit>
-
-        <unit id="tx_wavemailer.plugin.manage_subscription.description">
-            <segment>
-                <source>A form to select different topics or unsubscribe.</source>
             </segment>
         </unit>
     </file>

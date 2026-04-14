@@ -17,6 +17,7 @@ class SubscriptionController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
 {
     public function __construct(
         protected RecordFactory $recordFactory,
+        protected readonly SubscriberRepository $subscriberRepository,
     ) {}
     public function formAction(): ResponseInterface
     {

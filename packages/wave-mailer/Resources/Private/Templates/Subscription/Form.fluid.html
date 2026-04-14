@@ -10,24 +10,24 @@
 	<div class="tx_wavemailer">
 		<form class="subscription-form">
 			<div class="subscription-form-fieldwrap">
-				<label for="subscription_field_given-name" class="form-label">
-					Nachname
+				<label for="subscription_field_family-name" class="form-label">
+					<f:translate key="LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:subscription.form.label.lastName"/>
 				</label>
 				<input type="text" id="subscription_field_family-name" autocomplete="family-name" class="form-control">
 			</div>
 			<div class="subscription-form-fieldwrap">
 				<label for="subscription_field_given-name" class="form-label">
-					Vorname
+					<f:translate key="LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:subscription.form.label.firstName"/>
 				</label>
 				<input type="text" id="subscription_field_given-name" autocomplete="given-name" class="form-control">
 			</div>
 			<div class="subscription-form-fieldwrap">
 				<label for="subscription_field_email" class="form-label">
-					Email
+					<f:translate key="LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:subscription.form.label.email"/>
 				</label>
 				<input type="email" id="subscription_field_email" autocomplete="email" class="form-control">
 			</div>
-			<button type="submit" class="button form-submit">Anmelden</button>
+			<button type="submit" class="button form-submit"><f:translate key="LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:subscription.form.button.submit"/></button>
 		</form>
 	</div>
 </f:section>
