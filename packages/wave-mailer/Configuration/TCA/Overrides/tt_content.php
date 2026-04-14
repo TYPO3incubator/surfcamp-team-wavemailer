@@ -1,5 +1,6 @@
 <?php
 
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
 defined('TYPO3') or die();
@@ -18,14 +19,22 @@ defined('TYPO3') or die();
         'default',
         // plugin description, as visible in the new content element wizard
         'LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:subscriptionform.description',
+        'FILE:EXT:wave_mailer/Configuration/FlexForms/Subscription.xml'
     );
 
-    ExtensionUtility::registerPlugin(
+    ExtensionManagementUtility::addToAllTCAtypes(
+        'tt_content',
+        '--div--;Configuration,pi_flexform,',
+        $subscriptionForm,
+        'after:subheader',
+    );
+
+    $manageSubscription = ExtensionUtility::registerPlugin(
         'WaveMailer',
         'ManageSubscription',
         'Manage Subscription',
         'form-fieldset',
         'default',
-        'Manage newsletter subscription groups and unsubscribe',
+        'Manage newsletter subscription groups and unsubscribe'
     );
 })();

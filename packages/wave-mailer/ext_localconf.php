@@ -11,8 +11,8 @@ ExtensionUtility::configurePlugin(
 // extension name, matching the PHP namespaces (but without the vendor)
     'WaveMailer',
     'SubscriptionForm',
-    [\Beffp\WaveMailer\Controller\SubscriptionController::class => 'form'],
-    [],
+    [\Beffp\WaveMailer\Controller\SubscriptionController::class => 'form, subscribe'],
+    [\Beffp\WaveMailer\Controller\SubscriptionController::class => 'subscribe'],
     ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT,
 );
 

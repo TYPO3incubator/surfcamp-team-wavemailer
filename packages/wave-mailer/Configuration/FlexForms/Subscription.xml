@@ -1,0 +1,25 @@
+<T3DataStructure>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <sheetTitle>LLL:tx_wavemailer.plugin.settings</sheetTitle>
+                <type>array</type>
+                <el>
+                    <settings.subscriptionGroups>
+                        <label>LLL:tx_wavemailer.plugin.subscriptionGroups</label>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectMultipleSideBySide</renderType>
+                            <foreign_table>tx_wavemailer_domain_model_subscriptiongroup</foreign_table>
+                            <foreign_table_where>ORDER BY tx_wavemailer_domain_model_subscriptiongroup.name</foreign_table_where>
+                            <size>10</size>
+                            <autoSizeMax>30</autoSizeMax>
+                            <minitems>0</minitems>
+                            <maxitems>9999</maxitems>
+                        </config>
+                    </settings.subscriptionGroups>
+                </el>
+            </ROOT>
+        </sDEF>
+    </sheets>
+</T3DataStructure>
