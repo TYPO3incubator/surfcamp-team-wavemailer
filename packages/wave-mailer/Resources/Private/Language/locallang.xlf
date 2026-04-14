@@ -16,6 +16,11 @@
                 <source>Email</source>
             </segment>
         </unit>
+        <unit id="subscription.form.label.subscriptionGroups">
+            <segment>
+                <source>Subscription Topics</source>
+            </segment>
+        </unit>
         <unit id="subscription.form.button.submit">
             <segment>
                 <source>Subscribe</source>
