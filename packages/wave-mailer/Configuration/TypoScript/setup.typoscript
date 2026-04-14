@@ -1,5 +1,5 @@
 lib.contentElement {
-    templateRootPaths.200 = EXT:wave_mailer/Resources/Private/Templates/ContentElements/
+    templateRootPaths.1776173380 = EXT:wave_mailer/Resources/Private/Templates/ContentElements/
 }
 
 tt_content {
