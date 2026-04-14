@@ -21,6 +21,21 @@
                 <source>Subscribe</source>
             </segment>
         </unit>
+        <unit id="subscription.form.button.update">
+            <segment>
+                <source>Update subscription</source>
+            </segment>
+        </unit>
+        <unit id="subscription.form.button.unsubscribe">
+            <segment>
+                <source>Unsubscribe from all newsletters</source>
+            </segment>
+        </unit>
+        <unit id="subscription.form.subscriptionGroups">
+            <segment>
+                <source>Available newsletters</source>
+            </segment>
+        </unit>
 
         <unit id="manage.form.label.email">
             <segment>
