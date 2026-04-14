@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en">
     <file id="f1">
-
         <unit id="tx_wavemailer_domain_model_subscriber">
             <segment>
                 <source>Subscriber</source>
@@ -61,6 +60,11 @@
         <unit id="subscriptionform.description">
             <segment>
                 <source>Add a form to subscribe to a newsletter in the frontend</source>
+            </segment>
+        </unit>
+        <unit id="error.Subscriber.invalidEmail">
+            <segment>
+                <source>The given E-Mail address is not a valid E-Mail.</source>
             </segment>
         </unit>
         <unit id="tx_wavemailer.pagetype">
