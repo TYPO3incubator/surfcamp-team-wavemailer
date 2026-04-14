@@ -1,0 +1,21 @@
+.tx_wavemailer .subscription-form-fieldwrap {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+.tx_wavemailer .subscription-form-fieldwrap input[type=text], .tx_wavemailer .subscription-form-fieldwrap input[type=email] {
+  width: 100%;
+  max-width: 500px;
+  border: 0.125rem solid #CCC;
+  border-radius: 5rem;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+.tx_wavemailer .form-submit {
+  color: #FFF;
+}
+.tx_wavemailer .form-submit:hover, .tx_wavemailer .form-submit:focus, .tx_wavemailer .form-submit:active {
+  color: #FFF;
+}
+
+/*# sourceMappingURL=styles.css.map */

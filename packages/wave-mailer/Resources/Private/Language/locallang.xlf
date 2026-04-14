@@ -21,5 +21,36 @@
                 <source>Subscribe</source>
             </segment>
         </unit>
+
+        <unit id="manage.form.label.email">
+            <segment>
+                <source>Email *</source>
+            </segment>
+        </unit>
+        <unit id="manage.form.fieldset.subscriptionGroups">
+            <segment>
+                <source>Subscription Groups</source>
+            </segment>
+        </unit>
+        <unit id="manage.form.button.save">
+            <segment>
+                <source>Save</source>
+            </segment>
+        </unit>
+        <unit id="manage.form.button.unsubscribe">
+            <segment>
+                <source>Unsubscribe</source>
+            </segment>
+        </unit>
+        <unit id="manage.unsubscribe.success">
+            <segment>
+                <source>You have been successfully unsubscribed from the newsletter.</source>
+            </segment>
+        </unit>
+        <unit id="manage.update.success">
+            <segment>
+                <source>The changes have been successfully saved.</source>
+            </segment>
+        </unit>
     </file>
 </xliff>
