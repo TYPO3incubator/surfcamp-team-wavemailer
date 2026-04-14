@@ -11,6 +11,7 @@ mod.web_layout.BackendLayouts {
               1 {
                 name = LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:tx_wavemailer.backendTitle
                 colPos = 0
+                allowedContentTypes = wavemailer_textmedia
               }
             }
           }

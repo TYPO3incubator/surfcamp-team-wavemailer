@@ -1,0 +1,17 @@
+lib.contentElement {
+    templateRootPaths.1776173380 = EXT:wave_mailer/Resources/Private/Templates/ContentElements/
+}
+
+tt_content {
+    wavemailer_textmedia =< lib.contentElement
+    wavemailer_textmedia {
+        templateName = NewsletterContent
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+            10 {
+                references.fieldName = assets
+                as = images
+            }
+        }
+    }
+}

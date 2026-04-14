@@ -1,0 +1,26 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<div class="ce-textmedia">
+
+    <f:if condition="{data.header}">
+        <header>
+            <h2>{data.header}</h2>
+        </header>
+    </f:if>
+
+    <div>
+        <f:if condition="{images}">
+            <div>
+                <f:for each="{images}" as="image">
+                    <f:image image="{image}" width="400" alt="{image.alternative}" />
+                </f:for>
+            </div>
+        </f:if>
+
+        <f:if condition="{data.bodytext}">
+            <div>
+                <f:format.html>{data.bodytext}</f:format.html>
+            </div>
+        </f:if>
+    </div>
+</div>
+</html>
