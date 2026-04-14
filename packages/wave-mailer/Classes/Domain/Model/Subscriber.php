@@ -22,7 +22,7 @@ class Subscriber extends AbstractEntity
 
     protected bool $doubleOptIn;
 
-    protected \DateTime $cancellationDate;
+    protected ?\DateTime $cancellationDate = null;
 
     protected string $doubleOptInToken;
 
@@ -91,7 +91,7 @@ class Subscriber extends AbstractEntity
         $this->doubleOptInToken = $doubleOptInToken;
     }
 
-    public function getCancellationDate(): \DateTime
+    public function getCancellationDate(): ?\DateTime
     {
         return $this->cancellationDate;
     }
