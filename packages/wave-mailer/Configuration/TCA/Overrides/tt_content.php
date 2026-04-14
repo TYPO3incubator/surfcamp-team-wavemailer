@@ -11,13 +11,13 @@ defined('TYPO3') or die();
         // arbitrary, but unique plugin name (not visible in the backend)
         'SubscriptionForm',
         // plugin title, as visible in the drop-down in the backend, use "LLL:" for localization
-        'LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:subscriptionform.title',
+        'LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:subscriptionform.title',
         // plugin icon, use an icon identifier from the icon registry
         'form-fieldset',
         // plugin group, to define where the new plugin will be located in
         'default',
         // plugin description, as visible in the new content element wizard
-        'LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:subscriptionform.description',
+        'LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:subscriptionform.description',
     );
 
     ExtensionUtility::registerPlugin(

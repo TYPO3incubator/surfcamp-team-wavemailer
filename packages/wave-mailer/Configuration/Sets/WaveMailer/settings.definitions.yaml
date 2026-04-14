@@ -6,6 +6,13 @@ categories:
     parent: WaveMailer
 
 settings:
+  waveMailer.includeCSS:
+    label: 'Include CSS'
+    type: bool
+    category: WaveMailer
+    description: 'Include the default CSS of wave-mailer'
+    default: true
+
   waveMailer.confirmationPage:
     label: 'Confirmation page'
     type: page

@@ -2,7 +2,7 @@
 
 return [
     'ctrl' => [
-        'title' => 'LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:tx_wavemailer_domain_model_subscriber',
+        'title' => 'LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:tx_wavemailer_domain_model_subscriber',
         'label' => 'email',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -24,7 +24,7 @@ return [
     ],
     'columns' => [
         'email' => [
-           'label' => 'LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:tx_wavemailer_domain_model_subscriber.email',
+           'label' => 'LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:tx_wavemailer_domain_model_subscriber.email',
            'config' => [
                'type' => 'email',
                'eval' => 'unique',
@@ -32,37 +32,37 @@ return [
            ],
         ],
         'first_name' => [
-            'label' => 'LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:tx_wavemailer_domain_model_subscriber.first_name',
+            'label' => 'LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:tx_wavemailer_domain_model_subscriber.first_name',
             'config' => [
                 'type' => 'input',
             ],
         ],
         'last_name' => [
-            'label' => 'LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:tx_wavemailer_domain_model_subscriber.last_name',
+            'label' => 'LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:tx_wavemailer_domain_model_subscriber.last_name',
             'config' => [
                 'type' => 'input',
             ],
         ],
         'double_opt_in' => [
-            'label' => 'LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:tx_wavemailer_domain_model_subscriber.double_opt_in',
+            'label' => 'LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:tx_wavemailer_domain_model_subscriber.double_opt_in',
             'config' => [
                 'type' => 'check',
                 'items' => [
                     [
-                        'label' => 'LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:tx_wavemailer_domain_model_subscriber.double_opt_in.item.label',
+                        'label' => 'LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:tx_wavemailer_domain_model_subscriber.double_opt_in.item.label',
                     ],
                 ],
             ],
         ],
         'double_opt_in_token' => [
-            'label' => 'LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:tx_wavemailer_domain_model_subscriber.double_opt_in_token',
+            'label' => 'LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:tx_wavemailer_domain_model_subscriber.double_opt_in_token',
             'config' => [
                 'type' => 'input',
                 'readOnly' => true
             ],
         ],
         'subscription_groups' => [
-            'label' => 'LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:tx_wavemailer_domain_model_subscriber.subscription_groups',
+            'label' => 'LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:tx_wavemailer_domain_model_subscriber.subscription_groups',
             'config' => [
                 'type' => 'group',
                 'allowed' => 'tx_wavemailer_domain_model_subscriptiongroup',
