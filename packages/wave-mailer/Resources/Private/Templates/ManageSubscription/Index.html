@@ -4,12 +4,12 @@
 >
 <f:form action="update" method="post">
     <fieldset>
-        <label for="email">E-Mail *</label>
+        <label for="email"><f:translate key="LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:manage.form.label.email"/></label>
         <f:form.textfield name="email" id="email" value="{subscriber.email}" type="email" required="required" />
     </fieldset>
 
     <fieldset>
-        <legend>Subscription Groups</legend>
+        <legend><f:translate key="LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:manage.form.fieldset.subscriptionGroups"/></legend>
         <f:for each="{allSubscriptionGroups}" as="group">
             <label>
                 <f:form.checkbox name="subscriptionGroups[]" value="{group.name}" checked="{checkedGroups.{group.uid}}" />
@@ -18,7 +18,7 @@
         </f:for>
     </fieldset>
 
-    <f:form.submit value="Speichern" />
-    <button type="submit" formaction="{f:uri.action(action: 'unsubscribe')}">Abmelden</button>
+    <f:form.submit value="{f:translate(key: 'LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:manage.form.button.save')}" />
+    <button type="submit" formaction="{f:uri.action(action: 'unsubscribe')}"><f:translate key="LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:manage.form.button.unsubscribe"/></button>
 </f:form>
 </html>
