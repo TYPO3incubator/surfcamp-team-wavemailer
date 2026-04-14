@@ -38,8 +38,8 @@ defined('TYPO3') or die();
         'tt_content',
         'CType',
         [
-            'label' => 'LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:contentElement.title',
-            'description' => 'LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:contentElement.description',
+            'label' => 'LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:contentElement.title',
+            'description' => 'LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:contentElement.description',
             'value' => $contentType,
             'icon'  => 'content-textpic',
             'group' => 'default',
@@ -48,13 +48,14 @@ defined('TYPO3') or die();
 
     $GLOBALS['TCA']['tt_content']['types'][$contentType] = [
         'showitem' => '
-            --div--;LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:tabs.general,
+            --div--;LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:tabs.general,
             --palette--;;general,
-            header;LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:contentElement.header,
-            bodytext;LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:contentElement.text;--palette--;;richtext,
-            --div--;LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:tabs.media,
+            header;LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:contentElement.header,
+            --palette--;;wavemailer_layout,
+            bodytext;LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:contentElement.text;--palette--;;richtext,
+            --div--;LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:tabs.media,
             assets,
-            --div--;LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:tabs.access,
+            --div--;LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:tabs.access,
             --palette--;;hidden,
             --palette--;;access,
         ',
@@ -68,7 +69,46 @@ defined('TYPO3') or die();
                 'config' => [
                     'maxitems' => 1
                 ]
-            ]
+            ],
+            'textImageAlignment' => [
+                'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient',
+                'config' => [
+                    'type' => 'select',
+                    'renderType' => 'selectSingle',
+                    'items' => [
+                        [
+                            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.0',
+                            'value' => 0,
+                            'icon' => 'content-beside-text-img-above-center',
+                        ],
+                        [
+                            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.3',
+                            'value' => 1,
+                            'icon' => 'content-beside-text-img-below-center',
+                        ],
+                        [
+                            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.9',
+                            'value' => 2,
+                            'icon' => 'content-beside-text-img-right',
+                        ],
+                        [
+                            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.10',
+                            'value' => 3,
+                            'icon' => 'content-beside-text-img-left',
+                        ],
+                    ],
+                    'default' => 0,
+                    'fieldWizard' => [
+                        'selectIcons' => [
+                            'disabled' => false,
+                        ],
+                    ],
+                ],
+            ],
         ]
+    ];
+
+    $GLOBALS['TCA']['tt_content']['palettes']['wavemailer_layout'] = [
+        'showitem' => 'textImageAlignment',
     ];
 })();
