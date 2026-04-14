@@ -1,76 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en">
     <file id="f1">
-
-        <unit id="tx_wavemailer_domain_model_subscriber">
-            <segment>
-                <source>Subscriber</source>
-            </segment>
-        </unit>
-        <unit id="tx_wavemailer_domain_model_subscriber.email">
-            <segment>
-                <source>Email</source>
-            </segment>
-        </unit>
-        <unit id="tx_wavemailer_domain_model_subscriber.first_name">
-            <segment>
-                <source>First name</source>
-            </segment>
-        </unit>
-        <unit id="tx_wavemailer_domain_model_subscriber.last_name">
+        <unit id="subscription.form.label.lastName">
             <segment>
                 <source>Last name</source>
             </segment>
         </unit>
-        <unit id="tx_wavemailer_domain_model_subscriber.double_opt_in">
+        <unit id="subscription.form.label.firstName">
             <segment>
-                <source>Double opt-in</source>
+                <source>First name</source>
             </segment>
         </unit>
-        <unit id="tx_wavemailer_domain_model_subscriber.double_opt_in_token">
+        <unit id="subscription.form.label.email">
             <segment>
-                <source>Double opt-in token</source>
+                <source>Email</source>
             </segment>
         </unit>
-        <unit id="tx_wavemailer_domain_model_subscriber.double_opt_in.item.label">
+        <unit id="subscription.form.button.submit">
             <segment>
-                <source>Double opt-in</source>
-            </segment>
-        </unit>
-        <unit id="tx_wavemailer_domain_model_subscriber.subscription_groups">
-            <segment>
-                <source>Subscription groups (Topics)</source>
-            </segment>
-        </unit>
-
-        <unit id="tx_wavemailer_domain_model_subscriptiongroup">
-            <segment>
-                <source>Subscription groups</source>
-            </segment>
-        </unit>
-        <unit id="tx_wavemailer_domain_model_subscriptiongroup.name">
-            <segment>
-                <source>Name</source>
-            </segment>
-        </unit>
-        <unit id="subscriptionform.title">
-            <segment>
-                <source>Subscription form</source>
-            </segment>
-        </unit>
-        <unit id="subscriptionform.description">
-            <segment>
-                <source>Add a form to subscribe to a newsletter in the frontend</source>
-            </segment>
-        </unit>
-        <unit id="tx_wavemailer.pagetype">
-            <segment>
-                <source>Newsletter</source>
-            </segment>
-        </unit>
-        <unit id="tx_wavemailer.backendTitle">
-            <segment>
-                <source>Newsletter Content</source>
+                <source>Subscribe</source>
             </segment>
         </unit>
         <unit id="contentElement.title">

@@ -10,7 +10,7 @@ defined('TYPO3') or die();
         'pages',
         'doktype',
         [
-            'label' => 'LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:tx_wavemailer.pagetype',
+            'label' => 'LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:tx_wavemailer.pagetype',
             'value' => $customPageDoktype,
             'icon'  => $customIconClass,
             'group' => 'special',

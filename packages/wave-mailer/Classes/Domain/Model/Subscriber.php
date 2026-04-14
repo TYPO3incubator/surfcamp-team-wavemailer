@@ -9,20 +9,22 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 class Subscriber extends AbstractEntity
 {
-    private string $firstName;
+    protected string $firstName;
 
-    private string $lastName;
+    protected string $lastName;
 
-    private string $email;
+    protected string $email;
 
     /**
      * @var ObjectStorage<SubscriptionGroup>
      */
-    private ObjectStorage $subscriptionGroups;
+    protected ObjectStorage $subscriptionGroups;
 
-    private bool $doubleOptIn;
+    protected bool $doubleOptIn;
 
-    private string $doubleOptInToken;
+    protected ?\DateTime $cancellationDate = null;
+
+    protected string $doubleOptInToken;
 
     public function __construct()
     {
@@ -87,5 +89,15 @@ class Subscriber extends AbstractEntity
     public function setDoubleOptInToken(string $doubleOptInToken): void
     {
         $this->doubleOptInToken = $doubleOptInToken;
+    }
+
+    public function getCancellationDate(): ?\DateTime
+    {
+        return $this->cancellationDate;
+    }
+
+    public function setCancellationDate(\DateTime $cancellationDate): void
+    {
+        $this->cancellationDate = $cancellationDate;
     }
 }

@@ -1,0 +1,20 @@
+.tx_wavemailer {
+  .subscription-form-fieldwrap {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+
+    input[type="text"], input[type="email"] {
+      width: 100%;
+      max-width: 500px;
+      border: .125rem solid #CCC;
+      border-radius: 5rem;
+      padding: 0.5rem;
+      box-sizing: border-box;
+    }
+  }
+
+  .form-submit {
+    color: #FFF;
+  }
+}
