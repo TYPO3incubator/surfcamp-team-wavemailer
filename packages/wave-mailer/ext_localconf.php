@@ -27,3 +27,6 @@ ExtensionUtility::configurePlugin(
     ],
     ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT,
 );
+
+$GLOBALS['TYPO3_CONF_VARS']['MAIL']['templateRootPaths'][1776245886] = 'EXT:wave_mailer/Resources/Private/Templates/Email';
+$GLOBALS['TYPO3_CONF_VARS']['MAIL']['layoutRootPaths'][1776245886] = 'EXT:wave_mailer/Resources/Private/Layouts/Email';

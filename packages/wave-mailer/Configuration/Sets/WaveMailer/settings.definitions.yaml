@@ -20,10 +20,31 @@ settings:
     description: 'Page to redirect after a successful registration'
     default: 0
 
+  waveMailer.doubleOptInPage:
+    label: 'DoubleOptIn page'
+    type: page
+    category: WaveMailer.pages
+    description: 'Page with the double opt-in form'
+    default: 0
+
   waveMailer.storagePid:
     label: 'Storage page'
     type: page
     category: WaveMailer.pages
     description: 'Page to store new subscribers'
     default: 0
+
+  waveMailer.fromAddress:
+    label: 'From E-Mail Address'
+    type: text
+    category: WaveMailer
+    description: 'The E-Mail address to send the mails from'
+    default: 'noreply@example.org'
+
+  waveMailer.senderName:
+    label: 'Sender name'
+    type: text
+    category: WaveMailer
+    description: 'The name to send the mails from'
+    default: 'example.org'
 

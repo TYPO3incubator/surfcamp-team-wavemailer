@@ -8,7 +8,11 @@ use Beffp\WaveMailer\Domain\Repository\SubscriptionGroupRepository;
 use Beffp\WaveMailer\Domain\Validation\SubscriberValidator;
 use Beffp\WaveMailer\Exception\SettingsException;
 use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Mime\Address;
 use TYPO3\CMS\Core\Domain\RecordFactory;
+use TYPO3\CMS\Core\Mail\FluidEmail;
+use TYPO3\CMS\Core\Mail\MailerInterface;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Attribute\IgnoreValidation;
 use TYPO3\CMS\Extbase\Attribute\Validate;
 use TYPO3\CMS\Extbase\Persistence\Exception\IllegalObjectTypeException;
@@ -48,11 +52,33 @@ class SubscriptionController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
      */
     public function subscribeAction(#[Validate(validator: SubscriberValidator::class)] Subscriber $newSubscriber): ResponseInterface
     {
-        $this->subscriberRepository->add($newSubscriber);
+        if(!isset($this->settings['fromAddress']) || $this->settings['fromAddress'] === '') {
+            throw new SettingsException('The sender address is missing!', 1776245299);
+        }
+
+        if(!isset($this->settings['senderName']) || $this->settings['senderName'] === '') {
+            throw new SettingsException('The sender name is missing!', 1776245423);
+        }
 
         if(!isset($this->settings['confirmationPage']) || $this->settings['confirmationPage'] === 0) {
             throw new SettingsException('Confirmation page setting is missing!', 1776089125);
         }
+
+        $hash = hash('sha256', $newSubscriber->getEmail() . time());
+        $newSubscriber->setDoubleOptInToken($hash);
+
+        $this->subscriberRepository->add($newSubscriber);
+
+        $doubleOptInEmail = new FluidEmail();
+        $doubleOptInEmail
+            ->to($newSubscriber->getEmail())
+            ->from(new Address($this->settings['fromAddress'], $this->settings['senderName']))
+            ->subject('Please confirm your subscription')
+            ->format(FluidEmail::FORMAT_BOTH) // send HTML and plaintext mail
+            ->setTemplate('DoubleOptIn')
+            ->setRequest($this->request)
+            ->assignMultiple(['subscriber' => $newSubscriber, 'settings' => $this->settings]);
+        GeneralUtility::makeInstance(MailerInterface::class)->send($doubleOptInEmail);
 
         $uri = $this->uriBuilder->setTargetPageUid($this->settings['confirmationPage'])->build();
 

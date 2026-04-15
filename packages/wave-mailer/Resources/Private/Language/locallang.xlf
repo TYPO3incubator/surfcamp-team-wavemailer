@@ -87,5 +87,10 @@
                 <source>Available newsletters</source>
             </segment>
         </unit>
+        <unit id="doubleOptInEmail.subject">
+            <segment>
+                <source>Please confirm your subscription</source>
+            </segment>
+        </unit>
     </file>
 </xliff>
