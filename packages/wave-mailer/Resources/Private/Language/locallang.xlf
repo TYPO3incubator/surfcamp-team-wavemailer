@@ -16,9 +16,29 @@
                 <source>Email</source>
             </segment>
         </unit>
+        <unit id="subscription.form.label.subscriptionGroups">
+            <segment>
+                <source>Subscription Topics</source>
+            </segment>
+        </unit>
         <unit id="subscription.form.button.submit">
             <segment>
                 <source>Subscribe</source>
+            </segment>
+        </unit>
+        <unit id="subscription.form.button.update">
+            <segment>
+                <source>Update subscription</source>
+            </segment>
+        </unit>
+        <unit id="subscription.form.button.unsubscribe">
+            <segment>
+                <source>Unsubscribe from all newsletters</source>
+            </segment>
+        </unit>
+        <unit id="subscription.form.subscriptionGroups">
+            <segment>
+                <source>Available newsletters</source>
             </segment>
         </unit>
 
@@ -50,6 +70,26 @@
         <unit id="manage.update.success">
             <segment>
                 <source>The changes have been successfully saved.</source>
+            </segment>
+        </unit>
+        <unit id="subscription.form.button.update">
+            <segment>
+                <source>Update subscription</source>
+            </segment>
+        </unit>
+        <unit id="subscription.form.button.unsubscribe">
+            <segment>
+                <source>Unsubscribe from all newsletters</source>
+            </segment>
+        </unit>
+        <unit id="subscription.form.subscriptionGroups">
+            <segment>
+                <source>Available newsletters</source>
+            </segment>
+        </unit>
+        <unit id="doubleOptInEmail.subject">
+            <segment>
+                <source>Please confirm your subscription</source>
             </segment>
         </unit>
     </file>

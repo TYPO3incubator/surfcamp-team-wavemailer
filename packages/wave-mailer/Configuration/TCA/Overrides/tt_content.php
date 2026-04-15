@@ -21,15 +21,23 @@ defined('TYPO3') or die();
         'default',
         // plugin description, as visible in the new content element wizard
         'LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:subscriptionform.description',
+        'FILE:EXT:wave_mailer/Configuration/FlexForms/Subscription.xml'
     );
 
-    ExtensionUtility::registerPlugin(
+    ExtensionManagementUtility::addToAllTCAtypes(
+        'tt_content',
+        '--div--;Configuration,pi_flexform,',
+        $subscriptionForm,
+        'after:subheader',
+    );
+
+    $manageSubscription = ExtensionUtility::registerPlugin(
         'WaveMailer',
         'ManageSubscription',
         'Manage Subscription',
         'form-fieldset',
         'default',
-        'Manage newsletter subscription groups and unsubscribe',
+        'Manage newsletter subscription groups and unsubscribe'
     );
 
     $contentType = 'wavemailer_textmedia';
@@ -54,7 +62,7 @@ defined('TYPO3') or die();
             --palette--;;wavemailer_layout,
             bodytext;LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:contentElement.text;--palette--;;richtext,
             --div--;LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:tabs.media,
-            assets,
+            image,
             --div--;LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:tabs.access,
             --palette--;;hidden,
             --palette--;;access,
@@ -65,7 +73,7 @@ defined('TYPO3') or die();
                     'enableRichtext' => true,
                 ]
             ],
-            'assets' => [
+            'image' => [
                 'config' => [
                     'maxitems' => 1
                 ]

@@ -62,6 +62,11 @@
                 <source>The given E-Mail address is not a valid E-Mail.</source>
             </segment>
         </unit>
+        <unit id="error.Subscriber.notUniqueEmail">
+            <segment>
+                <source>The given E-Mail address is already in subscribed.</source>
+            </segment>
+        </unit>
         <unit id="tx_wavemailer.pagetype">
             <segment>
                 <source>Newsletter</source>
@@ -70,6 +75,16 @@
         <unit id="tx_wavemailer.backendTitle">
             <segment>
                 <source>Newsletter Content</source>
+            </segment>
+        </unit>
+        <unit id="tx_wavemailer.plugin.settings">
+            <segment>
+                <source>Settings</source>
+            </segment>
+        </unit>
+        <unit id="tx_wavemailer.plugin.subscriptionGroups">
+            <segment>
+                <source>Select subscription groups (leave empty to show all)</source>
             </segment>
         </unit>
         <unit id="contentElement.title">
@@ -105,6 +120,31 @@
         <unit id="tabs.access">
             <segment>
                 <source>Access</source>
+            </segment>
+        </unit>
+        <unit id="tx_wavemailer.plugin.settings">
+            <segment>
+                <source>Settings</source>
+            </segment>
+        </unit>
+        <unit id="tx_wavemailer.plugin.subscriptionGroups">
+            <segment>
+                <source>Select subscription groups (leave empty to show all)</source>
+            </segment>
+        </unit>
+        <unit id="pages.tx_wavemailer_subscription_groups">
+            <segment>
+                <source>Subscription Groups</source>
+            </segment>
+        </unit>
+        <unit id="pages.tx_wavemailer_send_date">
+            <segment>
+                <source>Send Date</source>
+            </segment>
+        </unit>
+        <unit id="pages.wizard.wave_mailer_step">
+            <segment>
+                <source>Subscription Groups</source>
             </segment>
         </unit>
     </file>

@@ -23,10 +23,16 @@ final class SubscriberValidator extends AbstractValidator
         }
         if (!$this->subscriberValidationService->isSubscriberEmailValid($value)) {
             $errorString = LocalizationUtility::translate(
-                'error.Subscriber.invalidEmail',
+                'LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:error.Subscriber.invalidEmail',
                 'WaveMailer',
             );
             $this->addErrorForProperty('email', $errorString, 1776087742);
+        }
+        if (!$this->subscriberValidationService->isSubscriberEmailUnique($value)) {
+            $errorString = LocalizationUtility::translate(
+                'LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:error.Subscriber.notUniqueEmail',
+            );
+            $this->addErrorForProperty('email', $errorString, 1776179134);
         }
     }
 }

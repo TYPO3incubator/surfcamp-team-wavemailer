@@ -7,28 +7,44 @@
 	<f:if condition="{settings.includeCSS}">
 		<f:asset.css identifier="wavemailer" href="EXT:wave_mailer/Resources/Public/SCSS/styles.css"/>
 	</f:if>
+
 	<div class="tx_wavemailer">
-		<form class="subscription-form">
+		<f:form action="subscribe" method="post" objectName="newSubscriber" object="{newSubscriber}">
 			<div class="subscription-form-fieldwrap">
-				<label for="subscription_field_family-name" class="form-label">
-					<f:translate key="LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:subscription.form.label.lastName"/>
-				</label>
-				<input type="text" id="subscription_field_family-name" autocomplete="family-name" class="form-control">
+				<fieldset>
+					<label for="email"><f:translate key="LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:subscription.form.label.email"/>*</label>
+					<f:form.textfield type="email" property="email" id="email" required="required"></f:form.textfield>
+					<f:render partial="FormError" arguments="{property: 'newSubscriber.email'}"/>
+				</fieldset>
 			</div>
+
 			<div class="subscription-form-fieldwrap">
-				<label for="subscription_field_given-name" class="form-label">
-					<f:translate key="LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:subscription.form.label.firstName"/>
-				</label>
-				<input type="text" id="subscription_field_given-name" autocomplete="given-name" class="form-control">
+				<fieldset>
+					<label for="firstname"><f:translate key="LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:subscription.form.label.firstName"/></label>
+					<f:form.textfield type="text" property="firstName" id="firstname"></f:form.textfield>
+				</fieldset>
 			</div>
+
 			<div class="subscription-form-fieldwrap">
-				<label for="subscription_field_email" class="form-label">
-					<f:translate key="LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:subscription.form.label.email"/>
-				</label>
-				<input type="email" id="subscription_field_email" autocomplete="email" class="form-control">
+				<fieldset>
+					<label for="lastname"><f:translate key="LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:subscription.form.label.lastName"/></label>
+					<f:form.textfield type="text" property="lastName" id="lastname"></f:form.textfield>
+				</fieldset>
 			</div>
-			<button type="submit" class="button form-submit"><f:translate key="LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:subscription.form.button.submit"/></button>
-		</form>
+
+			<div class="subscription-form-fieldwrap">
+				<fieldset>
+					<f:for each="{subscriptionGroups}" as="subscriptionGroup" iteration="i">
+						<div>
+							<f:form.checkbox multiple="1" property="subscriptionGroups" id="subscriptionGroup{i.cycle}" value="{subscriptionGroup.uid}" />
+							<label for="subscriptionGroup{i.cycle}">{subscriptionGroup.name}</label>
+						</div>
+					</f:for>
+				</fieldset>
+			</div>
+
+			<f:form.submit value="{f:translate(key: 'LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:subscription.form.button.submit')}"/>
+		</f:form>
 	</div>
 </f:section>
 </html>

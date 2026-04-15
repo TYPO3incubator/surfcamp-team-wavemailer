@@ -93,6 +93,7 @@ class ManageSubscriptionController extends ActionController
         }
 
         $subscriber->setCancellationDate(new \DateTime());
+        $subscriber->setHidden(true);
         $this->subscriberRepository->update($subscriber);
 
         return $this->htmlResponse();
