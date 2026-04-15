@@ -92,5 +92,31 @@
                 <source>Please confirm your subscription</source>
             </segment>
         </unit>
+
+        <unit id="subscription.form.label.salutation">
+            <segment>
+                <source>Salutation</source>
+            </segment>
+        </unit>
+        <unit id="subscription.form.label.salutation.notGiven">
+            <segment>
+                <source>Not Given</source>
+            </segment>
+        </unit>
+        <unit id="subscription.form.label.salutation.mr">
+            <segment>
+                <source>Mr.</source>
+            </segment>
+        </unit>
+        <unit id="subscription.form.label.salutation.ms">
+            <segment>
+                <source>Ms.</source>
+            </segment>
+        </unit>
+        <unit id="subscription.form.label.salutation.other">
+            <segment>
+                <source>Other</source>
+            </segment>
+        </unit>
     </file>
 </xliff>

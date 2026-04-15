@@ -31,6 +31,19 @@ return [
                'required' => true,
            ],
         ],
+        'salutation' => [
+            'label' => 'LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:tx_wavemailer_domain_model_subscriber.salutation',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => [
+                    ['LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:tx_wavemailer_domain_model_subscriber.salutation.notGiven', 0],
+                    ['LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:tx_wavemailer_domain_model_subscriber.salutation.mr', 1],
+                    ['LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:tx_wavemailer_domain_model_subscriber.salutation.ms', 2],
+                    ['LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:tx_wavemailer_domain_model_subscriber.salutation.other', 3],
+                ],
+            ],
+        ],
         'first_name' => [
             'label' => 'LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:tx_wavemailer_domain_model_subscriber.first_name',
             'config' => [

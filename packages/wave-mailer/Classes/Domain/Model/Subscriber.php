@@ -11,6 +11,8 @@ class Subscriber extends AbstractEntity
 {
     protected bool $hidden;
 
+    protected int $salutation;
+
     protected string $firstName;
 
     protected string $lastName;
@@ -41,6 +43,16 @@ class Subscriber extends AbstractEntity
     public function setHidden(bool $hidden): void
     {
         $this->hidden = $hidden;
+    }
+
+    public function getSalutation(): int
+    {
+        return $this->salutation;
+    }
+
+    public function setSalutation(int $salutation): void
+    {
+        $this->salutation = $salutation;
     }
 
     public function getFirstName(): string
