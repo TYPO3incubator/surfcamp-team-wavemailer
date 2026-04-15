@@ -21,8 +21,8 @@
 			<f:if condition="{settings.showSalutation}">
 				<div class="subscription-form-fieldwrap">
 					<fieldset>
-						<label for="salutation"><f:translate key="LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:subscription.form.label.salutation"/>{f:if(condition: '{settings.requireSalutation}', then: '*')}</label>
-						<f:form.select type="select" property="salutation" id="salutation" additionalAttributes="{f:if(condition: '{settings.requireSalutation}', then: '{required: \'required\'}')}">
+						<label for="salutation"><f:translate key="LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:subscription.form.label.salutation"/></label>
+						<f:form.select type="select" property="salutation" id="salutation">
 							<f:form.select.option value="0"><f:translate key="LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:subscription.form.label.salutation.notGiven"/></f:form.select.option>
 							<f:form.select.option value="1"><f:translate key="LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:subscription.form.label.salutation.mr"/></f:form.select.option>
 							<f:form.select.option value="2"><f:translate key="LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:subscription.form.label.salutation.ms"/></f:form.select.option>
@@ -36,7 +36,8 @@
 				<div class="subscription-form-fieldwrap">
 					<fieldset>
 						<label for="firstname"><f:translate key="LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:subscription.form.label.firstName"/>{f:if(condition: '{settings.requireFirstName}', then: '*')}</label>
-						<f:form.textfield type="text" property="firstName" id="firstname" additionalAttributes="{f:if(condition: '{settings.requireFirstName}', then: '{required: \'required\'}')}"></f:form.textfield>
+						<f:form.textfield type="text" property="firstName" id="firstname" ></f:form.textfield>
+						<f:render partial="FormError" arguments="{property: 'newSubscriber.firstName'}"/>
 					</fieldset>
 				</div>
 			</f:if>
@@ -45,7 +46,8 @@
 				<div class="subscription-form-fieldwrap">
 					<fieldset>
 						<label for="lastname"><f:translate key="LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:subscription.form.label.lastName"/>{f:if(condition: '{settings.requireLastName}', then: '*')}</label>
-						<f:form.textfield type="text" property="lastname" id="lastname" additionalAttributes="{f:if(condition: '{settings.requireLastName}', then: '{required: \'required\'}')}"></f:form.textfield>
+						<f:form.textfield type="text" property="lastName" id="lastname" additionalAttributes="{f:if(condition: '{settings.requireLastName}', then: '{required: \'required\'}')}"></f:form.textfield>
+						<f:render partial="FormError" arguments="{property: 'newSubscriber.lastName'}"/>
 					</fieldset>
 				</div>
 			</f:if>

@@ -50,7 +50,7 @@ class SubscriptionController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
      * @throws IllegalObjectTypeException
      * @throws SettingsException
      */
-    public function subscribeAction(#[Validate(validator: SubscriberValidator::class)] Subscriber $newSubscriber): ResponseInterface
+    public function subscribeAction(#[Validate(validator: SubscriberValidator::class, options: ['validateSettings' => true])] Subscriber $newSubscriber): ResponseInterface
     {
         if(!isset($this->settings['fromAddress']) || $this->settings['fromAddress'] === '') {
             throw new SettingsException('The sender address is missing!', 1776245299);

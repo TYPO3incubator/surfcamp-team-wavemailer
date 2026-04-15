@@ -81,12 +81,6 @@ settings:
     category: WaveMailer.fields
     default: true
 
-  waveMailer.requireSalutation:
-    label: 'Require salutation field in the form'
-    type: bool
-    category: WaveMailer.fields
-    default: false
-
 
 
 

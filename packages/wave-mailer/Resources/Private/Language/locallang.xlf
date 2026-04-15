@@ -118,5 +118,27 @@
                 <source>Other</source>
             </segment>
         </unit>
+
+        <unit id="error.Subscriber.invalidEmail">
+            <segment>
+                <source>The given E-Mail address is not a valid E-Mail.</source>
+            </segment>
+        </unit>
+        <unit id="error.Subscriber.notUniqueEmail">
+            <segment>
+                <source>The given E-Mail address is not a valid E-Mail.</source>
+            </segment>
+        </unit>
+        <unit id="error.Subscriber.noFirstName">
+            <segment>
+                <source>Please provide a first name.</source>
+            </segment>
+        </unit>
+        <unit id="error.Subscriber.noLastName">
+            <segment>
+                <source>Please provide a last name.</source>
+            </segment>
+        </unit>
+
     </file>
 </xliff>

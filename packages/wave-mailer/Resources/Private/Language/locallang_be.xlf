@@ -83,16 +83,6 @@
                 <source>Add a form to subscribe to a newsletter in the frontend</source>
             </segment>
         </unit>
-        <unit id="error.Subscriber.invalidEmail">
-            <segment>
-                <source>The given E-Mail address is not a valid E-Mail.</source>
-            </segment>
-        </unit>
-        <unit id="error.Subscriber.notUniqueEmail">
-            <segment>
-                <source>The given E-Mail address is already in subscribed.</source>
-            </segment>
-        </unit>
         <unit id="tx_wavemailer.pagetype">
             <segment>
                 <source>Newsletter</source>
