@@ -4,6 +4,9 @@ categories:
   WaveMailer.pages:
     label: 'Pages'
     parent: WaveMailer
+  WaveMailer.fields:
+    label: 'Configure shown fields and required fields'
+    parent: WaveMailer
 
 settings:
   waveMailer.includeCSS:
@@ -47,4 +50,43 @@ settings:
     category: WaveMailer
     description: 'The name to send the mails from'
     default: 'example.org'
+
+  waveMailer.showFirstName:
+    label: 'Show first name field in the form'
+    type: bool
+    category: WaveMailer.fields
+    default: true
+
+  waveMailer.requireFirstName:
+    label: 'Require first name field in the form'
+    type: bool
+    category: WaveMailer.fields
+    default: false
+
+  waveMailer.showLastName:
+    label: 'Show last name field in the form'
+    type: bool
+    category: WaveMailer.fields
+    default: true
+
+  waveMailer.requireLastName:
+    label: 'Require last name field in the form'
+    type: bool
+    category: WaveMailer.fields
+    default: false
+
+  waveMailer.showSalutation:
+    label: 'Show salutation field in the form'
+    type: bool
+    category: WaveMailer.fields
+    default: true
+
+  waveMailer.requireSalutation:
+    label: 'Require salutation field in the form'
+    type: bool
+    category: WaveMailer.fields
+    default: false
+
+
+
 

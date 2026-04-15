@@ -20,6 +20,12 @@ plugin.tx_wavemailer {
 		fromAddress = {$waveMailer.fromAddress}
 		senderName = {$waveMailer.senderName}
 		doubleOptInPage = {$waveMailer.doubleOptInPage}
+		requireSalutation = {$waveMailer.requireSalutation}
+		showSalutation = {$waveMailer.showSalutation}
+		requireLastName = {$waveMailer.requireLastName}
+		showLastName = {$waveMailer.showLastName}
+		requireFirstName = {$waveMailer.requireFirstName}
+		showFirstName = {$waveMailer.showFirstName}
 	}
 
 	persistence {
