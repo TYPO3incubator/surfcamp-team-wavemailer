@@ -112,6 +112,11 @@
                 <source>Subscription Groups</source>
             </segment>
         </unit>
+        <unit id="pages.tx_wavemailer_send_date">
+            <segment>
+                <source>Send Date</source>
+            </segment>
+        </unit>
         <unit id="pages.wizard.wave_mailer_step">
             <segment>
                 <source>Subscription Groups</source>
