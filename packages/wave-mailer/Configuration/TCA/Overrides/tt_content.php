@@ -113,7 +113,50 @@ defined('TYPO3') or die();
                     ],
                 ],
             ],
+            'header_layout' => [
+                'exclude' => true,
+                'label' => 'frontend.db.tt_content:header_type',
+                'config' => [
+                    'type' => 'select',
+                    'renderType' => 'selectSingle',
+                    'items' => [
+                        [
+                            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.default_value',
+                            'value' => '0',
+                        ],
+                        [
+                            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_layout.I.1',
+                            'value' => '1',
+                        ],
+                        [
+                            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_layout.I.2',
+                            'value' => '2',
+                        ],
+                        [
+                            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_layout.I.3',
+                            'value' => '3',
+                        ],
+                        [
+                            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_layout.I.4',
+                            'value' => '4',
+                        ],
+                        [
+                            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_layout.I.5',
+                            'value' => '5',
+                        ],
+                        [
+                            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_layout.I.6',
+                            'value' => '100',
+                        ],
+                    ],
+                    'default' => 0,
+                ],
+            ],
         ]
+    ];
+
+    $GLOBALS['TCA']['tt_content']['palettes']['headers'] = [
+        'showitem' => 'header;LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:contentElement.header, header_layout',
     ];
 
     $GLOBALS['TCA']['tt_content']['palettes']['wavemailer_layout'] = [
