@@ -132,5 +132,20 @@
                 <source>Select subscription groups (leave empty to show all)</source>
             </segment>
         </unit>
+        <unit id="pages.tx_wavemailer_subscription_groups">
+            <segment>
+                <source>Subscription Groups</source>
+            </segment>
+        </unit>
+        <unit id="pages.tx_wavemailer_send_date">
+            <segment>
+                <source>Send Date</source>
+            </segment>
+        </unit>
+        <unit id="pages.wizard.wave_mailer_step">
+            <segment>
+                <source>Subscription Groups</source>
+            </segment>
+        </unit>
     </file>
 </xliff>

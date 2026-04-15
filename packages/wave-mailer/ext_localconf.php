@@ -23,7 +23,7 @@ ExtensionUtility::configurePlugin(
         ManageSubscriptionController::class => 'index, update, unsubscribe',
     ],
     [
-        ManageSubscriptionController::class => 'index',
+        ManageSubscriptionController::class => 'update, unsubscribe',
     ],
     ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT,
 );
