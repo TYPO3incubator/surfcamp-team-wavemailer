@@ -62,7 +62,7 @@ defined('TYPO3') or die();
             --palette--;;wavemailer_layout,
             bodytext;LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:contentElement.text;--palette--;;richtext,
             --div--;LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:tabs.media,
-            assets,
+            image,
             --div--;LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:tabs.access,
             --palette--;;hidden,
             --palette--;;access,
@@ -73,7 +73,7 @@ defined('TYPO3') or die();
                     'enableRichtext' => true,
                 ]
             ],
-            'assets' => [
+            'image' => [
                 'config' => [
                     'maxitems' => 1
                 ]
