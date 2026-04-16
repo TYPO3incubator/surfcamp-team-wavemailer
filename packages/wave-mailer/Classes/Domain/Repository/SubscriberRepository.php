@@ -7,6 +7,8 @@ namespace Beffp\WaveMailer\Domain\Repository;
 use Doctrine\DBAL\ArrayParameterType;
 use Doctrine\DBAL\Exception;
 use Doctrine\DBAL\ParameterType;
+use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
+use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
@@ -137,5 +139,23 @@ class SubscriberRepository extends Repository
         }
 
         return (int)$queryBuilder->executeQuery()->fetchOne();
+    }
+
+    /**
+     * @throws InvalidQueryException
+     */
+    public function findCancelled(int $days): QueryResultInterface
+    {
+        $query = $this->createQuery();
+        $query->getQuerySettings()->setIgnoreEnableFields(true);
+        $threshold = (new \DateTime())->modify("-{$days} days");
+        $query->matching(
+            $query->logicalAnd(
+                $query->greaterThan('cancellationDate', 0),
+                $query->lessThanOrEqual('cancellationDate', $threshold),
+                $query->equals('hidden', true),
+            )
+        );
+        return $query->execute();
     }
 }
