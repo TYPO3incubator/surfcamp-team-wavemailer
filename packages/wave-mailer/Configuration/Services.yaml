@@ -7,3 +7,19 @@ services:
   Beffp\WaveMailer\:
     resource: '../Classes/*'
     exclude: '../Classes/Domain/Model/*'
+
+  Beffp\WaveMailer\Dashboard\Widgets\GroupCountWidget:
+    arguments:
+      $connectionPool: '@TYPO3\CMS\Core\Database\ConnectionPool'
+      $options:
+        showTotal: true
+        refreshAvailable: true
+    tags:
+      - name: dashboard.widget
+        identifier: 'wavemailer_groupcounts'
+        groupNames: 'general'
+        title: 'LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:dashboard.title'
+        description: 'LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:dashboard.description'
+        iconIdentifier: 'content-widget-chart'
+        height: 'medium'
+        width: 'medium'

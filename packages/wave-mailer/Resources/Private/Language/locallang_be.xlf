@@ -147,5 +147,25 @@
                 <source>Subscription Groups</source>
             </segment>
         </unit>
+        <unit id="dashboard.title">
+            <segment>
+                <source>Newsletter Statistics: Subscribers per group</source>
+            </segment>
+        </unit>
+        <unit id="dashboard.groups">
+            <segment>
+                <source>Groups</source>
+            </segment>
+        </unit>
+        <unit id="dashboard.subscriber">
+            <segment>
+                <source>Subscriber</source>
+            </segment>
+        </unit>
+        <unit id="dashboard.description">
+            <segment>
+                <source>Displays the number of subscribers per subscription group.</source>
+            </segment>
+        </unit>
     </file>
 </xliff>
