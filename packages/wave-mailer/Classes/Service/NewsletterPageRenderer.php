@@ -93,6 +93,17 @@ class NewsletterPageRenderer
             );
         }
 
-        return $content;
+        return $this->makeUrlsAbsolute($content, (string)$site->getBase());
+    }
+
+    private function makeUrlsAbsolute(string $html, string $baseUrl): string
+    {
+        $baseUrl = rtrim($baseUrl, '/');
+
+        return str_replace(
+            ['src="/', 'href="/', "src='/", "href='/"],
+            ['src="' . $baseUrl . '/', 'href="' . $baseUrl . '/', "src='" . $baseUrl . '/', "href='" . $baseUrl . '/'],
+            $html
+        );
     }
 }
