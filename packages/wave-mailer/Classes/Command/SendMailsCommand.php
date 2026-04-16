@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Beffp\WaveMailer\Commands;
+namespace Beffp\WaveMailer\Command;
 
 use Beffp\WaveMailer\Service\NewsletterQueueService;
 use Doctrine\DBAL\Exception;
