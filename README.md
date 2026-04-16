@@ -13,10 +13,8 @@ Newsletter sending is a two-step process:
 
 #### Setup
 Create two scheduler tasks in the backend module Administration > Scheduler:
-1. ```wavemailer:queue-emails``` Queues emails for pending newsletter pages. Accepts an optional --batch-size (-b) option to limit the number of emails queued per run (default: 50).
-2. ```messenger:consume``` Processes the queued messages and sends the emails. This is a standard TYPO3/Symfony Messenger consumer command.
-
-Both tasks should run periodically (e.g. every minute) to ensure timely delivery.
+1. ```wavemailer:queue-emails``` Accepts an optional --batch-size (-b) option to limit the number of emails queued per run (default: 50). Should run periodically (e.g. every minute) to ensure timely delivery.
+2. ```messenger:consume``` This is a standard TYPO3/Symfony Messenger consumer command. Check the documentation to configure the automatic restart: https://docs.typo3.org/permalink/t3coreapi:message-bus-consume-command
 
 **Mail queue statuses:**
 
