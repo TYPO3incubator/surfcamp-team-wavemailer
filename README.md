@@ -6,6 +6,9 @@ Wave Mailer is a TYPO3 extension for newsletter mailing management. It provides 
 
 ## Configuration
 
+### Include the site set
+Go to Site Management > Sites, edit your site configuration and add the "WaveMailer" set under Sets. This registers the newsletter page type, content elements, and TypoScript configuration.
+
 ### Queue and send newsletter emails
 Newsletter sending is a two-step process:
 1. The ```wavemailer:queue-emails``` command finds newsletter pages (doktype 116) whose send date has passed, resolves the assigned subscription groups, and creates a mail queue entry for each active subscriber. Each entry is dispatched as a SendNewsletterMessage to the Symfony Messenger queue.
@@ -27,4 +30,10 @@ Create two scheduler tasks in the backend module Administration > Scheduler:
 ### Anonymize unsubscribed users
 To be GDPR-compliant there is a command to anonymize the first name, last name and email address of unsubscribed users.
 Create the scheduler task ```wavemailer:anonymize-subscribers```in the backend module Administration > Scheduler and choose the number of days after which the unsubscribed users should be anonymized.
+
+## How to create you first newsletter
+1. Create one or more subscription group records (e.g. "Monthly Updates", "Product News") on a storage page. Subscribers will be assigned to these groups.
+2. In the page tree, create a new page and select the page type "Newsletter" (doktype 116). In the page properties assign one or more subscription groups that should receive this newsletter and set the send date to the desired delivery time.
+3. In the page properties under Appearance, select the "Wave Mailer Newsletter Layout" backend layout. This restricts the available content elements to the newsletter-specific content elements. These content elements are optimized for emails.
+4. Add content elements to the page.
 
