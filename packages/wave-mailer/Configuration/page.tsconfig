@@ -22,3 +22,5 @@ mod.web_layout.BackendLayouts {
     icon = EXT:wave_mailer/Resources/Public/Icons/Extension.svg
   }
 }
+
+templates.typo3/cms-dashboard.1776264571 = beffp/wave-mailer:Resources/Private

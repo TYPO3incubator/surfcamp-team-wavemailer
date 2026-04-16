@@ -1,0 +1,21 @@
+<f:layout name="Widget/Widget"></f:layout>
+<f:section name="main">
+    <div class="dashboard-list">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th><f:translate key="LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:dashboard.groups"/></th>
+                <th><f:translate key="LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:dashboard.subscriber"/></th>
+            </tr>
+            </thead>
+            <tbody>
+            <f:for each="{groups}" as="group">
+                <tr>
+                    <td>{group.name}</td>
+                    <td><span class="badge badge-info">{group.subscribers -> f:count()}</span></td>
+                </tr>
+            </f:for>
+            </tbody>
+        </table>
+    </div>
+</f:section>
