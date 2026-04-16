@@ -37,3 +37,27 @@ Create the scheduler task ```wavemailer:anonymize-subscribers```in the backend m
 3. In the page properties under Appearance, select the "Wave Mailer Newsletter Layout" backend layout. This restricts the available content elements to the newsletter-specific content elements. These content elements are optimized for emails.
 4. Add content elements to the page.
 
+## Double-Opt-In
+
+Double Opt-In Handlin 
+The Double Opt In is responsible for validating a subscribers email address by verifying a unique hash sent via email
+
+How it works
+The controller resides in the namespace php:Beffp\WaveMailer\Controller. It uses the php ‘SubscriberRepository‘ to find and upate the subscriber
+Code Block:
+Public function confirmAction(string $hash){
+ 	//logic to confirm the user
+}
+
+Main Logic 
+1.	Validation: Checks if the provided php:$hash is not empty
+2.	Identification: Finds a subscriber by the property php: doubleOptIn Token
+3.	Activation: Sets php doubleOptIn to php true and persists the change
+
+
+View Assignment
+The Controller assigns a translation key tot he variable html:{message}
+‘doubleOptIn.userNotFound‘: Ift he hash does not match any subscriber.
+‘doubleOptIn.confirmed‘: On successful activation
+
+
