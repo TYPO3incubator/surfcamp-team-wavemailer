@@ -103,6 +103,12 @@
             </segment>
         </unit>
 
+        <unit id="doubleOptIn.confirm.success">
+            <segment>
+                <source>Your Subscription was confirmed successfully.</source>
+            </segment>
+        </unit>
+
         <unit id="manageSubscription.subject">
             <segment>
                 <source>Manage your subscription</source>

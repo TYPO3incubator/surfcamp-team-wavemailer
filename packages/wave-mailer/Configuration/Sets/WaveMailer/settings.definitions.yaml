@@ -30,6 +30,13 @@ settings:
     description: 'Page to manage the subscriptions'
     default: 0
 
+  waveMailer.subscriptionConfirmationPage:
+    label: 'Subscription Confirmation page'
+    type: page
+    category: WaveMailer.pages
+    description: 'Page to confirm subscriptions'
+    default: 0
+
   waveMailer.doubleOptInPage:
     label: 'DoubleOptIn page'
     type: page

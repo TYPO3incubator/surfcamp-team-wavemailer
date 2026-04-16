@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Beffp\WaveMailer\Controller\DoubleOptInController;
 use Beffp\WaveMailer\Controller\ManageSubscriptionController;
 use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
@@ -36,6 +37,18 @@ ExtensionUtility::configurePlugin(
     ],
     [
         ManageSubscriptionController::class => 'manage, update, unsubscribe',
+    ],
+    ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT,
+);
+
+ExtensionUtility::configurePlugin(
+    'WaveMailer',
+    'ConfirmDoubleOptIn',
+    [
+        DoubleOptInController::class => 'confirm',
+    ],
+    [
+        DoubleOptInController::class => 'confirm',
     ],
     ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT,
 );

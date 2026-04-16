@@ -49,6 +49,15 @@ defined('TYPO3') or die();
         'Send the manage link to the user'
     );
 
+    $confirmDoubleOptIn = ExtensionUtility::registerPlugin(
+        'WaveMailer',
+        'ConfirmDoubleOptIn',
+        'DoubleOptIn Confirmation',
+        'form-fieldset',
+        'default',
+        'Confirm double opt-in for newsletter subscription'
+    );
+
     $contentType = 'wavemailer_textmedia';
 
     ExtensionManagementUtility::addTcaSelectItem(

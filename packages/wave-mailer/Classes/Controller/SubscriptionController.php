@@ -60,7 +60,7 @@ class SubscriptionController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
             throw new SettingsException('The sender name is missing!', 1776245423);
         }
 
-        if(!isset($this->settings['confirmationPage']) || $this->settings['confirmationPage'] === 0) {
+        if(!isset($this->settings['confirmationPage']) || $this->settings['subscriptionConfirmationPage'] === 0) {
             throw new SettingsException('Confirmation page setting is missing!', 1776089125);
         }
 
@@ -68,7 +68,7 @@ class SubscriptionController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
         $subscriber = $this->subscriberRepository->findOneBy(['email' => $newSubscriber->getEmail()]);
 
         if($subscriber !== null) {
-            return $this->redirectToUri($this->uriBuilder->setTargetPageUid($this->settings['confirmationPage'])->build());
+            return $this->redirectToUri($this->uriBuilder->setTargetPageUid($this->settings['subscriptionConfirmationPage'])->build());
         }
 
         $hash = hash('sha256', $newSubscriber->getEmail() . time());
@@ -87,7 +87,7 @@ class SubscriptionController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
             ->assignMultiple(['subscriber' => $newSubscriber, 'settings' => $this->settings]);
         GeneralUtility::makeInstance(MailerInterface::class)->send($doubleOptInEmail);
 
-        $uri = $this->uriBuilder->setTargetPageUid($this->settings['confirmationPage'])->build();
+        $uri = $this->uriBuilder->setTargetPageUid($this->settings['subscriptionConfirmationPage'])->build();
 
         return $this->redirectToUri($uri);
     }
