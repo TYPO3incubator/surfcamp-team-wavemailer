@@ -58,7 +58,7 @@ class ManageSubscriptionController extends ActionController
     public function manageAction(#[Validate(validator: SubscriberValidator::class)] ?Subscriber $subscriber = null, string $manageSubscriptionToken = ''): ResponseInterface
     {
         if($subscriber->getManageSubscriptionToken() !== $manageSubscriptionToken) {
-            $this->redirect('managingError');
+            throw new \RuntimeException('An error occurred.', 1776346546);
         }
 
         $checkedGroups = [];
@@ -124,11 +124,6 @@ class ManageSubscriptionController extends ActionController
         $subscriber->setHidden(true);
         $this->subscriberRepository->update($subscriber);
 
-        return $this->htmlResponse();
-    }
-
-    public function managingErrorAction()
-    {
         return $this->htmlResponse();
     }
 }

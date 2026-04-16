@@ -65,7 +65,7 @@ class SubscriptionController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
         }
 
         /** When user is already subscribed, redirect to confirmation page, same result as with new subscriber to prevent information disclosure */
-        $subscriber = $this->subscriberRepository->findByEmail($newSubscriber->getEmail());
+        $subscriber = $this->subscriberRepository->findBy(['email' => $newSubscriber->getEmail()]);
 
         if($subscriber !== null) {
             return $this->redirectToUri($this->uriBuilder->setTargetPageUid($this->settings['confirmationPage'])->build());
