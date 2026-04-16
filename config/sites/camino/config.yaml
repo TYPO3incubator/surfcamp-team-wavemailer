@@ -1,4 +1,4 @@
-base: /camino/
+base: 'https://wave-mailer.ddev.site'
 dependencies:
   - typo3/theme-camino
   - beffp/wave-mailer
