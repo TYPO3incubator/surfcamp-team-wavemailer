@@ -1,0 +1,5 @@
+TCEFORM {
+    tt_content {
+        imageorient.types.wavemailer_textmedia.removeItems = 25, 26, 27, 28
+    }
+}

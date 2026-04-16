@@ -83,28 +83,6 @@ defined('TYPO3') or die();
                 'config' => [
                     'type' => 'select',
                     'renderType' => 'selectSingle',
-                    'items' => [
-                        [
-                            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.0',
-                            'value' => 0,
-                            'icon' => 'content-beside-text-img-above-center',
-                        ],
-                        [
-                            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.3',
-                            'value' => 1,
-                            'icon' => 'content-beside-text-img-below-center',
-                        ],
-                        [
-                            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.9',
-                            'value' => 2,
-                            'icon' => 'content-beside-text-img-right',
-                        ],
-                        [
-                            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.10',
-                            'value' => 3,
-                            'icon' => 'content-beside-text-img-left',
-                        ],
-                    ],
                     'default' => 0,
                     'fieldWizard' => [
                         'selectIcons' => [
