@@ -58,7 +58,7 @@ defined('TYPO3') or die();
         'showitem' => '
             --div--;LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:tabs.general,
             --palette--;;general,
-            header;LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:contentElement.header,
+            --palette--;;header,
             --palette--;;wavemailer_layout,
             bodytext;LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:contentElement.text;--palette--;;richtext,
             --div--;LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:tabs.media,
@@ -78,33 +78,11 @@ defined('TYPO3') or die();
                     'maxitems' => 1
                 ]
             ],
-            'textImageAlignment' => [
+            'imageorient' => [
                 'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient',
                 'config' => [
                     'type' => 'select',
                     'renderType' => 'selectSingle',
-                    'items' => [
-                        [
-                            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.0',
-                            'value' => 0,
-                            'icon' => 'content-beside-text-img-above-center',
-                        ],
-                        [
-                            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.3',
-                            'value' => 1,
-                            'icon' => 'content-beside-text-img-below-center',
-                        ],
-                        [
-                            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.9',
-                            'value' => 2,
-                            'icon' => 'content-beside-text-img-right',
-                        ],
-                        [
-                            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.10',
-                            'value' => 3,
-                            'icon' => 'content-beside-text-img-left',
-                        ],
-                    ],
                     'default' => 0,
                     'fieldWizard' => [
                         'selectIcons' => [
@@ -117,6 +95,6 @@ defined('TYPO3') or die();
     ];
 
     $GLOBALS['TCA']['tt_content']['palettes']['wavemailer_layout'] = [
-        'showitem' => 'textImageAlignment',
+        'showitem' => 'imageorient',
     ];
 })();
