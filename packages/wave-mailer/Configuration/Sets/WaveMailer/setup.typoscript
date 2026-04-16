@@ -5,6 +5,7 @@ lib.fluidPage {
 lib.contentElement {
 	templateRootPaths.20 = EXT:wave_mailer/Resources/Private/Templates/ContentElements/
 	layoutRootPaths.20 = EXT:wave_mailer/Resources/Private/Templates/Layouts/
+	partialRootPaths.20 = EXT:wave_mailer/Resources/Private/Partials/
 }
 
 tt_content {
@@ -14,7 +15,7 @@ tt_content {
 		dataProcessing {
 			10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
 			10 {
-				references.fieldName = assets
+				references.fieldName = image
 				as = images
 			}
 		}

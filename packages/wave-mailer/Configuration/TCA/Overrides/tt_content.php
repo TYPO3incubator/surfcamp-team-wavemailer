@@ -58,7 +58,7 @@ defined('TYPO3') or die();
         'showitem' => '
             --div--;LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:tabs.general,
             --palette--;;general,
-            header;LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:contentElement.header,
+            --palette--;;header,
             --palette--;;wavemailer_layout,
             bodytext;LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:contentElement.text;--palette--;;richtext,
             --div--;LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:tabs.media,
@@ -78,7 +78,7 @@ defined('TYPO3') or die();
                     'maxitems' => 1
                 ]
             ],
-            'textImageAlignment' => [
+            'imageorient' => [
                 'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient',
                 'config' => [
                     'type' => 'select',
@@ -117,6 +117,6 @@ defined('TYPO3') or die();
     ];
 
     $GLOBALS['TCA']['tt_content']['palettes']['wavemailer_layout'] = [
-        'showitem' => 'textImageAlignment',
+        'showitem' => 'imageorient',
     ];
 })();

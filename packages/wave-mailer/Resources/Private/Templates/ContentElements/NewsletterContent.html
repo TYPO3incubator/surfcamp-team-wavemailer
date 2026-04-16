@@ -1,45 +1,104 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-<div class="ce-textmedia">
 
-    <f:switch expression="{data.textImageAlignment}">
-        <f:defaultCase>
-            <table style="width: 600px">
-                <thead>
+<style>
+    .wm-text p      { margin: 0 0 12px 0; font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 1.6; color: #444444; }
+    .wm-text a      { color: #0066cc; text-decoration: underline; }
+    .wm-text ul,
+    .wm-text ol     { margin: 0 0 12px 0; padding-left: 24px; font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 1.6; color: #444444; }
+    .wm-text strong,
+    .wm-text b      { font-weight: 700; }
+    .wm-text em,
+    .wm-text i      { font-style: italic; }
+</style>
+<f:debug>{data.imageorient}</f:debug>
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f4f4f4;">
+    <tbody>
+    <tr>
+        <td align="center" style="padding:24px 16px;">
 
-                </thead>
+            <table width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;width:100%;background-color:#ffffff;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+                <f:switch expression="{data.textImageAlignment}">
+
+                    <f:defaultCase>
+                        <tbody>
+                        <tr>
+                            <td style="padding:0;">
+                                <f:render section="EmailImage" arguments="{_all}" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding:32px 40px;">
+                                <f:render section="EmailText" arguments="{_all}" />
+                            </td>
+                        </tr>
+                        </tbody>
+                    </f:defaultCase>
+
+                    <f:case value="1">
+                        <tbody>
+                        <tr>
+                            <td style="padding:32px 40px;">
+                                <f:render section="EmailText" arguments="{_all}" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding:0;">
+                                <f:render section="EmailImage" arguments="{_all}" />
+                            </td>
+                        </tr>
+                        </tbody>
+                    </f:case>
+
+                    <f:case value="2">
+                        <tbody>
+                        <tr>
+                            <td width="55%" valign="top" style="padding:32px 24px 32px 40px;">
+                                <f:render section="EmailText" arguments="{_all}" />
+                            </td>
+                            <td width="45%" valign="top" style="padding:24px 16px 24px 0;">
+                                <f:render section="EmailImage" arguments="{_all}" />
+                            </td>
+                        </tr>
+                        </tbody>
+                    </f:case>
+
+                    <f:case value="3">
+                        <tbody>
+                        <tr>
+                            <td width="45%" valign="top" style="padding:24px 0 24px 16px;">
+                                <f:render section="EmailImage" arguments="{_all}" />
+                            </td>
+                            <td width="55%" valign="top" style="padding:32px 40px 32px 24px;">
+                                <f:render section="EmailText" arguments="{_all}" />
+                            </td>
+                        </tr>
+                        </tbody>
+                    </f:case>
+
+                </f:switch>
             </table>
-        </f:defaultCase>
-        <f:case value="1">
 
-        </f:case>
-        <f:case value="2">
+        </td>
+    </tr>
+    </tbody>
+</table>
 
-        </f:case>
-        <f:case value="3">
-
-        </f:case>
-    </f:switch>
-
-    <f:if condition="{data.header}">
-        <header>
-            <h2>{data.header}</h2>
-        </header>
+<f:section name="EmailText">
+    <f:render partial="Header/All" arguments="{_all}" />
+    <f:if condition="{data.bodytext}">
+        <f:format.html>{data.bodytext}</f:format.html>
     </f:if>
+</f:section>
 
-    <div>
-        <f:if condition="{images}">
-            <div>
-                <f:for each="{images}" as="image">
-                    <f:image image="{image}" width="400" alt="{image.alternative}" />
-                </f:for>
-            </div>
-        </f:if>
+<f:section name="EmailImage">
+    <f:if condition="{images}">
+        <f:for each="{images}" as="image">
+            <img src="{f:uri.image(image: image, width: '600', cropVariant: 'default')}"
+                 width="600"
+                 alt="{image.alternative}"
+                 style="display:block;width:100%;height:auto;border:0;" />
+        </f:for>
+    </f:if>
+</f:section>
 
-        <f:if condition="{data.bodytext}">
-            <div>
-                <f:format.html>{data.bodytext}</f:format.html>
-            </div>
-        </f:if>
-    </div>
-</div>
 </html>
