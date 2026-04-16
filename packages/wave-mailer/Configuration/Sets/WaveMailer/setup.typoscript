@@ -17,6 +17,7 @@ plugin.tx_wavemailer {
 	settings {
 		includeCSS = {$waveMailer.includeCSS}
 		confirmationPage = {$waveMailer.confirmationPage}
+		manageSubscriptionPage = {$waveMailer.manageSubscriptionPage}
 		fromAddress = {$waveMailer.fromAddress}
 		senderName = {$waveMailer.senderName}
 		doubleOptInPage = {$waveMailer.doubleOptInPage}

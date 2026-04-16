@@ -30,6 +30,8 @@ class Subscriber extends AbstractEntity
 
     protected string $doubleOptInToken;
 
+    protected string $manageSubscriptionToken;
+
     public function __construct()
     {
         $this->subscriptionGroups = new ObjectStorage();
@@ -108,6 +110,16 @@ class Subscriber extends AbstractEntity
     public function getDoubleOptInToken(): string
     {
         return $this->doubleOptInToken;
+    }
+
+    public function getManageSubscriptionToken(): string
+    {
+        return $this->manageSubscriptionToken;
+    }
+
+    public function setManageSubscriptionToken(string $manageSubscriptionToken): void
+    {
+        $this->manageSubscriptionToken = $manageSubscriptionToken;
     }
 
     public function setDoubleOptInToken(string $doubleOptInToken): void

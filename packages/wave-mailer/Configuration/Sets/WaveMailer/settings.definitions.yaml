@@ -23,6 +23,13 @@ settings:
     description: 'Page to redirect after a successful registration'
     default: 0
 
+  waveMailer.manageSubscriptionPage:
+    label: 'Manage Subscription page'
+    type: page
+    category: WaveMailer.pages
+    description: 'Page to manage the subscriptions'
+    default: 0
+
   waveMailer.doubleOptInPage:
     label: 'DoubleOptIn page'
     type: page

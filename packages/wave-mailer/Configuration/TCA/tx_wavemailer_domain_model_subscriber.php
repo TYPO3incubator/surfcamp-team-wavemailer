@@ -74,6 +74,13 @@ return [
                 'readOnly' => true
             ],
         ],
+        'manage_subscription_token' => [
+            'label' => 'LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:tx_wavemailer_domain_model_subscriber.double_opt_in_token',
+            'config' => [
+                'type' => 'input',
+                'readOnly' => true
+            ],
+        ],
         'subscription_groups' => [
             'label' => 'LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:tx_wavemailer_domain_model_subscriber.subscription_groups',
             'config' => [

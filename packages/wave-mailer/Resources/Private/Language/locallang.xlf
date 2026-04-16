@@ -72,6 +72,16 @@
                 <source>The changes have been successfully saved.</source>
             </segment>
         </unit>
+        <unit id="manage.email.sent">
+            <segment>
+                <source>If your E-Mail address is in our system you will receive an E-Mail with a link to manage your subscription</source>
+            </segment>
+        </unit>
+        <unit id="manage.error">
+            <segment>
+                <source>An error occurred. Pleas try again.</source>
+            </segment>
+        </unit>
         <unit id="subscription.form.button.update">
             <segment>
                 <source>Update subscription</source>
@@ -90,6 +100,12 @@
         <unit id="doubleOptInEmail.subject">
             <segment>
                 <source>Please confirm your subscription</source>
+            </segment>
+        </unit>
+
+        <unit id="manageSubscription.subject">
+            <segment>
+                <source>Manage your subscription</source>
             </segment>
         </unit>
 
@@ -116,6 +132,12 @@
         <unit id="subscription.form.label.salutation.other">
             <segment>
                 <source>Other</source>
+            </segment>
+        </unit>
+
+        <unit id="subscription.form.button.sendLink">
+            <segment>
+                <source>Send</source>
             </segment>
         </unit>
 
