@@ -54,6 +54,7 @@
 
 			<div class="subscription-form-fieldwrap">
 				<fieldset>
+					<label><f:translate key="LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:subscription.form.label.subscriptionGroups"></f:translate></label>
 					<f:for each="{subscriptionGroups}" as="subscriptionGroup" iteration="i">
 						<div>
 							<f:form.checkbox multiple="1" property="subscriptionGroups" id="subscriptionGroup{i.cycle}" value="{subscriptionGroup.uid}" />
