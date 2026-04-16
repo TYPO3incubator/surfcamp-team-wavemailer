@@ -34,11 +34,6 @@ final class SubscriberValidator extends AbstractValidator
                 'WaveMailer',
             ), 1776087742);
         }
-        if (!$this->subscriberValidationService->isSubscriberEmailUnique($value)) {
-            $this->addErrorForProperty('email', LocalizationUtility::translate(
-                'LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:error.Subscriber.notUniqueEmail',
-            ), 1776179134);
-        }
         if ($this->options['validateSettings']) {
             /** @var Site $site */
             $site = $this->request->getAttribute('site');
