@@ -11,6 +11,8 @@ class Subscriber extends AbstractEntity
 {
     protected bool $hidden;
 
+    protected int $salutation;
+
     protected string $firstName;
 
     protected string $lastName;
@@ -28,6 +30,8 @@ class Subscriber extends AbstractEntity
 
     protected string $doubleOptInToken;
 
+    protected string $manageSubscriptionToken;
+
     public function __construct()
     {
         $this->subscriptionGroups = new ObjectStorage();
@@ -41,6 +45,16 @@ class Subscriber extends AbstractEntity
     public function setHidden(bool $hidden): void
     {
         $this->hidden = $hidden;
+    }
+
+    public function getSalutation(): int
+    {
+        return $this->salutation;
+    }
+
+    public function setSalutation(int $salutation): void
+    {
+        $this->salutation = $salutation;
     }
 
     public function getFirstName(): string
@@ -96,6 +110,16 @@ class Subscriber extends AbstractEntity
     public function getDoubleOptInToken(): string
     {
         return $this->doubleOptInToken;
+    }
+
+    public function getManageSubscriptionToken(): string
+    {
+        return $this->manageSubscriptionToken;
+    }
+
+    public function setManageSubscriptionToken(string $manageSubscriptionToken): void
+    {
+        $this->manageSubscriptionToken = $manageSubscriptionToken;
     }
 
     public function setDoubleOptInToken(string $doubleOptInToken): void

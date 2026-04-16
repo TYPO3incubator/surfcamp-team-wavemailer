@@ -2,24 +2,12 @@
     xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
     data-namespace-typo3-fluid="true"
 >
-
-<f:form action="update" method="post" object="{subscriber}">
+<f:form action="sendManageLink" method="post" object="{subscriber}">
     <fieldset>
         <label for="email"><f:translate key="subscription.form.label.email"></f:translate> *</label>
         <f:form.textfield name="email" value="{subscriber.email}" type="email" required="required" />
     </fieldset>
 
-    <fieldset>
-        <legend><f:translate key="subscription.form.subscriptionGroups"></f:translate></legend>
-        <f:for each="{allSubscriptionGroups}" as="group">
-            <label>
-                <f:form.checkbox name="subscriptionGroups[]" value="{group.name}" checked="{checkedGroups.{group.uid}}" />
-                {group.name}
-            </label>
-        </f:for>
-    </fieldset>
-
-    <f:form.submit value="{f:translate(key: 'subscription.form.button.update')}" />
-    <button type="submit" formaction="{f:uri.action(action: 'unsubscribe')}"><f:translate key="subscription.form.button.unsubscribe"></f:translate></button>
+    <f:form.submit value="{f:translate(key: 'subscription.form.button.sendLink')}" />
 </f:form>
 </html>

@@ -50,7 +50,7 @@ class SubscriptionController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
      * @throws IllegalObjectTypeException
      * @throws SettingsException
      */
-    public function subscribeAction(#[Validate(validator: SubscriberValidator::class)] Subscriber $newSubscriber): ResponseInterface
+    public function subscribeAction(#[Validate(validator: SubscriberValidator::class, options: ['validateSettings' => true])] Subscriber $newSubscriber): ResponseInterface
     {
         if(!isset($this->settings['fromAddress']) || $this->settings['fromAddress'] === '') {
             throw new SettingsException('The sender address is missing!', 1776245299);
@@ -64,6 +64,13 @@ class SubscriptionController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
             throw new SettingsException('Confirmation page setting is missing!', 1776089125);
         }
 
+        /** When user is already subscribed, redirect to confirmation page, same result as with new subscriber to prevent information disclosure */
+        $subscriber = $this->subscriberRepository->findByEmail($newSubscriber->getEmail());
+
+        if($subscriber !== null) {
+            return $this->redirectToUri($this->uriBuilder->setTargetPageUid($this->settings['confirmationPage'])->build());
+        }
+
         $hash = hash('sha256', $newSubscriber->getEmail() . time());
         $newSubscriber->setDoubleOptInToken($hash);
 
@@ -74,7 +81,7 @@ class SubscriptionController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
             ->to($newSubscriber->getEmail())
             ->from(new Address($this->settings['fromAddress'], $this->settings['senderName']))
             ->subject('Please confirm your subscription')
-            ->format(FluidEmail::FORMAT_BOTH) // send HTML and plaintext mail
+            ->format(FluidEmail::FORMAT_BOTH)
             ->setTemplate('DoubleOptIn')
             ->setRequest($this->request)
             ->assignMultiple(['subscriber' => $newSubscriber, 'settings' => $this->settings]);

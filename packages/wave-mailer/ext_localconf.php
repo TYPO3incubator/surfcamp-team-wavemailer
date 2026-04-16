@@ -18,12 +18,24 @@ ExtensionUtility::configurePlugin(
 
 ExtensionUtility::configurePlugin(
     'WaveMailer',
-    'ManageSubscription',
+    'SendManageSubscriptionLink',
     [
-        ManageSubscriptionController::class => 'index, update, unsubscribe',
+        ManageSubscriptionController::class => 'index, sendManageLink',
     ],
     [
-        ManageSubscriptionController::class => 'update, unsubscribe',
+        ManageSubscriptionController::class => 'sendManageLink',
+    ],
+    ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT,
+);
+
+ExtensionUtility::configurePlugin(
+    'WaveMailer',
+    'ManageSubscription',
+    [
+        ManageSubscriptionController::class => 'index, sendManageLink, manage, update, unsubscribe',
+    ],
+    [
+        ManageSubscriptionController::class => 'manage, update, unsubscribe',
     ],
     ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT,
 );

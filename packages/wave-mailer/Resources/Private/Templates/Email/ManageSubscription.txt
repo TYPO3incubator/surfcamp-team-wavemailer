@@ -1,0 +1,2 @@
+		Please open the following link to manage your subscription:
+		<f:uri.action absolute="1" pluginName="ManageSubscription" pageUid="{settings.manageSubscriptionPage}" controller="ManageSubscription" action="manage" arguments="{subscriber: subscriber, manageSubscriptionToken: subscriber.manageSubscriptionToken}">Manage Subscription</f:uri.action>

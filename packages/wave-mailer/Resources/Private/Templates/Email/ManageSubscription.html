@@ -1,0 +1,12 @@
+<f:layout name="SystemEmail" />
+
+<f:section name="Subject">
+	<f:translate key="manageSubscription.subject"></f:translate>
+</f:section>
+
+<f:section name="Main">
+	<p>
+		Please open the following link to manage your subscription:
+		<f:link.action pluginName="ManageSubscription" pageUid="{settings.manageSubscriptionPage}" controller="ManageSubscription" action="manage" arguments="{subscriber: subscriber, manageSubscriptionToken: subscriber.manageSubscriptionToken}">Manage Subscription</f:link.action>
+	</p>
+</f:section>
