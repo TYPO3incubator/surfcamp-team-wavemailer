@@ -2,12 +2,18 @@
     xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
     data-namespace-typo3-fluid="true"
 >
-<f:form action="sendManageLink" method="post" object="{subscriber}">
-    <fieldset>
-        <label for="email"><f:translate key="subscription.form.label.email"></f:translate> *</label>
-        <f:form.textfield name="email" value="{subscriber.email}" type="email" required="required" />
-    </fieldset>
-
-    <f:form.submit value="{f:translate(key: 'subscription.form.button.sendLink')}" />
-</f:form>
+<div class="tx_wavemailer">
+    <f:if condition="{settings.includeCSS}">
+        <f:asset.css identifier="wavemailer" href="EXT:wave_mailer/Resources/Public/SCSS/styles.css"/>
+    </f:if>
+    <f:form action="sendManageLink" method="post" object="{subscriber}">
+        <div class="subscription-form-fieldwrap">
+            <fieldset>
+                <label for="email"><f:translate key="subscription.form.label.email"></f:translate> *</label>
+                <f:form.textfield name="email" value="{subscriber.email}" type="email" required="required" />
+            </fieldset>
+        </div>
+        <f:form.submit value="{f:translate(key: 'subscription.form.button.sendLink')}" />
+    </f:form>
+</div>
 </html>
