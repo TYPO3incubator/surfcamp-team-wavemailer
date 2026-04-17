@@ -4,6 +4,7 @@ namespace Beffp\WaveMailer\Controller;
 
 use Beffp\WaveMailer\Domain\Repository\SubscriberRepository;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 
 class DoubleOptInController extends ActionController
 {
@@ -13,7 +14,7 @@ class DoubleOptInController extends ActionController
 
     public function confirmAction(string $hash) {
         if ($hash === '') {
-            throw new \InvalidArgumentException('Hash is empty', 1776157052);
+            throw new \InvalidArgumentException(LocalizationUtility::translate('error.hashEmpty', 'wave_mailer'), 1776157052);
         }
 
         $subscriber = $this->subscriberRepository->findOneBy(['doubleOptInToken' => $hash]);

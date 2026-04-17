@@ -16,6 +16,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Attribute\IgnoreValidation;
 use TYPO3\CMS\Extbase\Attribute\Validate;
 use TYPO3\CMS\Extbase\Persistence\Exception\IllegalObjectTypeException;
+use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 
 class SubscriptionController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
@@ -53,15 +54,15 @@ class SubscriptionController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
     public function subscribeAction(#[Validate(validator: SubscriberValidator::class, options: ['validateSettings' => true])] Subscriber $newSubscriber): ResponseInterface
     {
         if(!isset($this->settings['fromAddress']) || $this->settings['fromAddress'] === '') {
-            throw new SettingsException('The sender address is missing!', 1776245299);
+            throw new SettingsException(LocalizationUtility::translate('error.settings.fromAddressMissing', 'wave_mailer'), 1776245299);
         }
 
         if(!isset($this->settings['senderName']) || $this->settings['senderName'] === '') {
-            throw new SettingsException('The sender name is missing!', 1776245423);
+            throw new SettingsException(LocalizationUtility::translate('error.settings.senderNameMissing', 'wave_mailer'), 1776245423);
         }
 
         if(!isset($this->settings['confirmationPage']) || $this->settings['subscriptionConfirmationPage'] === 0) {
-            throw new SettingsException('Confirmation page setting is missing!', 1776089125);
+            throw new SettingsException(LocalizationUtility::translate('error.settings.confirmationPageMissing', 'wave_mailer'), 1776089125);
         }
 
         /** When user is already subscribed, redirect to confirmation page, same result as with new subscriber to prevent information disclosure */
@@ -80,7 +81,7 @@ class SubscriptionController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
         $doubleOptInEmail
             ->to($newSubscriber->getEmail())
             ->from(new Address($this->settings['fromAddress'], $this->settings['senderName']))
-            ->subject('Please confirm your subscription')
+            ->subject(LocalizationUtility::translate('doubleOptInEmail.subject', 'wave_mailer'))
             ->format(FluidEmail::FORMAT_BOTH)
             ->setTemplate('DoubleOptIn')
             ->setRequest($this->request)

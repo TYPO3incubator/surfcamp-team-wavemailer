@@ -79,22 +79,47 @@
         </unit>
         <unit id="manage.error">
             <segment>
-                <source>An error occurred. Pleas try again.</source>
+                <source>An error occurred. Please try again.</source>
             </segment>
         </unit>
-        <unit id="subscription.form.button.update">
+        <unit id="error.generic">
             <segment>
-                <source>Update subscription</source>
+                <source>An error occurred.</source>
             </segment>
         </unit>
-        <unit id="subscription.form.button.unsubscribe">
+        <unit id="error.subscriber.notFound">
             <segment>
-                <source>Unsubscribe from all newsletters</source>
+                <source>No subscriber found for the given email address.</source>
             </segment>
         </unit>
-        <unit id="subscription.form.subscriptionGroups">
+        <unit id="error.subscription.cancelled">
             <segment>
-                <source>Available newsletters</source>
+                <source>This subscription has been cancelled.</source>
+            </segment>
+        </unit>
+        <unit id="error.subscription.alreadyCancelled">
+            <segment>
+                <source>This subscription has already been cancelled.</source>
+            </segment>
+        </unit>
+        <unit id="error.hashEmpty">
+            <segment>
+                <source>Hash is empty</source>
+            </segment>
+        </unit>
+        <unit id="error.settings.fromAddressMissing">
+            <segment>
+                <source>The sender address is missing!</source>
+            </segment>
+        </unit>
+        <unit id="error.settings.senderNameMissing">
+            <segment>
+                <source>The sender name is missing!</source>
+            </segment>
+        </unit>
+        <unit id="error.settings.confirmationPageMissing">
+            <segment>
+                <source>Confirmation page setting is missing!</source>
             </segment>
         </unit>
         <unit id="doubleOptInEmail.subject">
