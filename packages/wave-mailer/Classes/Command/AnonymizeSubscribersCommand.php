@@ -44,7 +44,7 @@ class AnonymizeSubscribersCommand extends Command
      */
     public function execute(InputInterface $input, OutputInterface $output): int
     {
-        $subscribers = $this->subscriberRepository->findCancelled($input->getArgument('days'));
+        $subscribers = $this->subscriberRepository->findCancelled((int) $input->getArgument('days'));
 
         /** @var Subscriber $subscriber */
         foreach ($subscribers as $subscriber) {
