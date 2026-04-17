@@ -16,7 +16,7 @@ class DoubleOptInController extends ActionController
             throw new \InvalidArgumentException('Hash is empty', 1776157052);
         }
 
-        $subscriber = $this->subscriberRepository->findOneBy(['doubleOptInHash' => $hash]);
+        $subscriber = $this->subscriberRepository->findOneBy(['doubleOptInToken' => $hash]);
 
         if ($subscriber === null) {
             $this->view->assign('message', 'doubleOptIn.userNotFound');

@@ -21,6 +21,32 @@
                 <source>Last name</source>
             </segment>
         </unit>
+        <unit id="tx_wavemailer_domain_model_subscriber.salutation">
+            <segment>
+                <source>Salutation</source>
+            </segment>
+        </unit>
+        <unit id="tx_wavemailer_domain_model_subscriber.salutation.notGiven">
+            <segment>
+                <source>Not Given</source>
+            </segment>
+        </unit>
+        <unit id="tx_wavemailer_domain_model_subscriber.salutation.mr">
+            <segment>
+                <source>Mr.</source>
+            </segment>
+        </unit>
+        <unit id="tx_wavemailer_domain_model_subscriber.salutation.ms">
+            <segment>
+                <source>Ms.</source>
+            </segment>
+        </unit>
+        <unit id="tx_wavemailer_domain_model_subscriber.salutation.other">
+            <segment>
+                <source>Other</source>
+            </segment>
+        </unit>
+
         <unit id="tx_wavemailer_domain_model_subscriber.double_opt_in_token">
             <segment>
                 <source>Double opt-in token</source>
@@ -55,16 +81,6 @@
         <unit id="subscriptionform.description">
             <segment>
                 <source>Add a form to subscribe to a newsletter in the frontend</source>
-            </segment>
-        </unit>
-        <unit id="error.Subscriber.invalidEmail">
-            <segment>
-                <source>The given E-Mail address is not a valid E-Mail.</source>
-            </segment>
-        </unit>
-        <unit id="error.Subscriber.notUniqueEmail">
-            <segment>
-                <source>The given E-Mail address is already in subscribed.</source>
             </segment>
         </unit>
         <unit id="tx_wavemailer.pagetype">

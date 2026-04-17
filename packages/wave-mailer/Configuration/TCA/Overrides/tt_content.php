@@ -40,6 +40,24 @@ defined('TYPO3') or die();
         'Manage newsletter subscription groups and unsubscribe'
     );
 
+    $sendManageSubscription = ExtensionUtility::registerPlugin(
+        'WaveMailer',
+        'SendManageSubscriptionLink',
+        'Send Manage Subscription Link',
+        'form-fieldset',
+        'default',
+        'Send the manage link to the user'
+    );
+
+    $confirmDoubleOptIn = ExtensionUtility::registerPlugin(
+        'WaveMailer',
+        'ConfirmDoubleOptIn',
+        'DoubleOptIn Confirmation',
+        'form-fieldset',
+        'default',
+        'Confirm double opt-in for newsletter subscription'
+    );
+
     $contentType = 'wavemailer_textmedia';
 
     ExtensionManagementUtility::addTcaSelectItem(

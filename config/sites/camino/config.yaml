@@ -1,4 +1,4 @@
-base: /camino/
+base: 'https://surfcamp-team-wavemailer.ddev.site'
 dependencies:
   - typo3/theme-camino
   - beffp/wave-mailer

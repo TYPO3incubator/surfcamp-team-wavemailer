@@ -22,4 +22,14 @@ class SubscriberValidationService
     {
         return $this->subscriberRepository->count(['email' => $subscriber->getEmail(), 'cancellationDate' => 0]) < 1;
     }
+
+    public function hasFirstName(Subscriber $subscriber): bool
+    {
+        return $subscriber->getFirstName() !== '';
+    }
+
+    public function hasLastName(Subscriber $subscriber): bool
+    {
+        return $subscriber->getLastName() !== '';
+    }
 }

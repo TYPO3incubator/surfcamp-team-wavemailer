@@ -6,12 +6,19 @@ namespace Beffp\WaveMailer\Domain\Validation;
 
 use Beffp\WaveMailer\Domain\Model\Subscriber;
 use Beffp\WaveMailer\Service\SubscriberValidationService;
+use TYPO3\CMS\Core\Site\Entity\Site;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 use TYPO3\CMS\Extbase\Validation\Validator\AbstractValidator;
 
 final class SubscriberValidator extends AbstractValidator
 {
-    public function __construct(private readonly SubscriberValidationService $subscriberValidationService) {}
+    public function __construct(private readonly SubscriberValidationService $subscriberValidationService)
+    {
+    }
+
+    protected $supportedOptions = [
+        'validateSettings' => [false, 'Weather to check settings for required fields', 'boolean'],
+    ];
 
     protected function isValid(mixed $value): void
     {
@@ -22,17 +29,30 @@ final class SubscriberValidator extends AbstractValidator
             $this->addError($errorString, 1776087687);
         }
         if (!$this->subscriberValidationService->isSubscriberEmailValid($value)) {
-            $errorString = LocalizationUtility::translate(
-                'LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:error.Subscriber.invalidEmail',
+            $this->addErrorForProperty('email', LocalizationUtility::translate(
+                'LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:error.Subscriber.invalidEmail',
                 'WaveMailer',
-            );
-            $this->addErrorForProperty('email', $errorString, 1776087742);
+            ), 1776087742);
         }
-        if (!$this->subscriberValidationService->isSubscriberEmailUnique($value)) {
-            $errorString = LocalizationUtility::translate(
-                'LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:error.Subscriber.notUniqueEmail',
-            );
-            $this->addErrorForProperty('email', $errorString, 1776179134);
+        if ($this->options['validateSettings']) {
+            /** @var Site $site */
+            $site = $this->request->getAttribute('site');
+
+            if($site->getSettings()->get('waveMailer.requireFirstName', false)) {
+                if (!$this->subscriberValidationService->hasFirstName($value)) {
+                    $this->addErrorForProperty('firstName', LocalizationUtility::translate(
+                        'LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:error.Subscriber.noFirstName',
+                    ), 1776262924);
+                }
+            }
+
+            if($site->getSettings()->get('waveMailer.requireLastName', false)) {
+                if (!$this->subscriberValidationService->hasLastName($value)) {
+                    $this->addErrorForProperty('lastName', LocalizationUtility::translate(
+                        'LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:error.Subscriber.noLastName',
+                    ), 1776262928);
+                }
+            }
         }
     }
 }
