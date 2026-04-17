@@ -56,6 +56,7 @@ class AnonymizeSubscribersCommand extends Command
             $subscriber->setFirstName($firstName);
             $subscriber->setLastName($lastName);
             $subscriber->setEmail($localPart . '@' . $domain . '.com');
+            $subscriber->setAnonymized(true);
             try {
                 $this->subscriberRepository->update($subscriber);
                 $this->persistenceManager->persistAll();

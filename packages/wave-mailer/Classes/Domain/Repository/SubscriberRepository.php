@@ -154,6 +154,7 @@ class SubscriberRepository extends Repository
                 $query->greaterThan('cancellationDate', 0),
                 $query->lessThanOrEqual('cancellationDate', $threshold),
                 $query->equals('hidden', true),
+                $query->equals('anonymized', false),
             )
         );
         return $query->execute();

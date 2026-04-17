@@ -113,6 +113,11 @@
                 <source>Double opt-in</source>
             </segment>
         </unit>
+        <unit id="tx_wavemailer_domain_model_subscriber.anonymized">
+            <segment>
+                <source>Anonymized?</source>
+            </segment>
+        </unit>
         <unit id="contentElement.title">
             <segment>
                 <source>Newsletter Text &amp; Media</source>

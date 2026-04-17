@@ -98,6 +98,18 @@ return [
                 'readOnly' => true,
             ],
         ],
+        'anonymized' => [
+            'label' => 'LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:tx_wavemailer_domain_model_subscriber.anonymized',
+            'config' => [
+                'type' => 'check',
+                'readOnly' => true,
+                'items' => [
+                    [
+                        'label' => '',
+                    ],
+                ],
+            ],
+        ],
     ],
     'types' => [
         '0' => [

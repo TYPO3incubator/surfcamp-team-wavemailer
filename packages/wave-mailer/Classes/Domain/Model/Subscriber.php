@@ -28,6 +28,8 @@ class Subscriber extends AbstractEntity
 
     protected ?\DateTime $cancellationDate = null;
 
+    protected bool $anonymized = false;
+
     protected string $doubleOptInToken;
 
     protected string $manageSubscriptionToken;
@@ -135,5 +137,15 @@ class Subscriber extends AbstractEntity
     public function setCancellationDate(\DateTime $cancellationDate): void
     {
         $this->cancellationDate = $cancellationDate;
+    }
+
+    public function isAnonymized(): bool
+    {
+        return $this->anonymized;
+    }
+
+    public function setAnonymized(bool $anonymized): void
+    {
+        $this->anonymized = $anonymized;
     }
 }
