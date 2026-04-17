@@ -12,6 +12,72 @@
       padding: 0.5rem;
       box-sizing: border-box;
     }
+
+    select {
+      width: 100%;
+      max-width: 500px;
+      border: .125rem solid #CCC;
+      border-radius: 5rem;
+      padding: 0.5rem 2.5rem 0.5rem 0.75rem;
+      box-sizing: border-box;
+      appearance: none;
+      -webkit-appearance: none;
+      background-color: #FFF;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23999' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.75rem center;
+      cursor: pointer;
+
+      &:focus-visible {
+        outline: 2px solid #333;
+        outline-offset: 2px;
+      }
+    }
+
+    fieldset div {
+      margin-bottom: 0.5rem;
+
+      input[type="checkbox"] {
+        position: absolute;
+        opacity: 0;
+        width: 0;
+        height: 0;
+        margin: 0;
+
+        & + label {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.75rem;
+          cursor: pointer;
+          margin-bottom: 0;
+
+          &::before {
+            content: '';
+            display: block;
+            flex-shrink: 0;
+            width: 1.25rem;
+            height: 1.25rem;
+            border: .125rem solid #CCC;
+            border-radius: 0.25rem;
+            transition: border-color 0.2s, background-color 0.2s;
+          }
+        }
+
+        &:checked + label::before {
+          background-color: #333;
+          border-color: #333;
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 10'%3E%3Cpath d='M1 5l3.5 3.5L11 1' stroke='%23FFF' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 70%;
+        }
+
+        &:focus-visible + label::before {
+          outline: 2px solid #333;
+          outline-offset: 2px;
+        }
+      }
+    }
   }
 
   .form-submit {
