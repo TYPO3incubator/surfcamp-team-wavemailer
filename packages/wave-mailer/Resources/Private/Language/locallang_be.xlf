@@ -103,6 +103,11 @@
                 <source>Select subscription groups (leave empty to show all)</source>
             </segment>
         </unit>
+        <unit id="tx_wavemailer_domain_model_subscriber.cancellation_date">
+            <segment>
+                <source>Cancellation date</source>
+            </segment>
+        </unit>
         <unit id="contentElement.title">
             <segment>
                 <source>Newsletter Text &amp; Media</source>

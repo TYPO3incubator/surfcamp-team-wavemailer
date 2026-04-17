@@ -92,7 +92,7 @@ return [
             ],
         ],
         'cancellation_date' => [
-            'label' => 'LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:tx_wavemailer_domain_model_subscriber.cancellation_date',
+            'label' => 'LLL:EXT:wave_mailer/Resources/Private/Language/locallang_be.xlf:tx_wavemailer_domain_model_subscriber.cancellation_date',
             'config' => [
                 'type' => 'datetime',
                 'readOnly' => true,
