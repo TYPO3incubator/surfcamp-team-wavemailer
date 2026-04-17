@@ -80,12 +80,36 @@
     }
   }
 
+  .form-submit,
+  .btn-outline {
+    display: inline-block;
+    padding: 0.625rem 1.5rem;
+    border-radius: 5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+  }
+
   .form-submit {
     color: #FFF;
 
     &:hover,
     &:focus,
     &:active {
+      color: #FFF;
+    }
+  }
+
+  .btn-outline {
+    background-color: transparent;
+    color: #B45023;
+    border: .125rem solid #B45023;
+    border-radius: 1.5rem;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: #B45023;
       color: #FFF;
     }
   }

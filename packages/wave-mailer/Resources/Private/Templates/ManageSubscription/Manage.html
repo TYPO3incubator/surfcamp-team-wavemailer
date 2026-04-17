@@ -2,26 +2,34 @@
     xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
     data-namespace-typo3-fluid="true"
 >
-<f:form action="update" method="post" objectName="subscriber" object="{subscriber}">
-	<f:form.hidden name="manageSubscriptionToken" value="{subscriber.manageSubscriptionToken}" />
-	<fieldset>
-		<label><f:translate key="subscription.form.label.email"></f:translate> *</label>
-		<input disabled type="email" value="{subscriber.email}">
-	</fieldset>
+<div class="tx_wavemailer">
+	<f:if condition="{settings.includeCSS}">
+		<f:asset.css identifier="wavemailer" href="EXT:wave_mailer/Resources/Public/SCSS/styles.css"/>
+	</f:if>
+	<f:form action="update" method="post" objectName="subscriber" object="{subscriber}">
+		<f:form.hidden name="manageSubscriptionToken" value="{subscriber.manageSubscriptionToken}" />
 
-	<div class="subscription-form-fieldwrap">
-		<fieldset>
-			<label><f:translate key="LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:subscription.form.label.subscriptionGroups"></f:translate></label>
-			<f:for each="{allSubscriptionGroups}" as="subscriptionGroup" iteration="i">
-				<div>
-					<f:form.checkbox multiple="1" property="subscriptionGroups" id="subscriptionGroup{i.cycle}" value="{subscriptionGroup.uid}" />
-					<label for="subscriptionGroup{i.cycle}">{subscriptionGroup.name}</label>
-				</div>
-			</f:for>
-		</fieldset>
-	</div>
+		<div class="subscription-form-fieldwrap">
+			<fieldset>
+				<label><f:translate key="subscription.form.label.email"/> *</label>
+				<input disabled type="email" value="{subscriber.email}">
+			</fieldset>
+		</div>
 
-	<f:form.submit value="{f:translate(key: 'subscription.form.button.update')}" />
-	<button type="submit" formaction="{f:uri.action(action: 'unsubscribe', arguments: {email: subscriber.email})}"><f:translate key="subscription.form.button.unsubscribe"></f:translate></button>
-</f:form>
+		<div class="subscription-form-fieldwrap">
+			<fieldset>
+				<label><f:translate key="LLL:EXT:wave_mailer/Resources/Private/Language/locallang.xlf:subscription.form.label.subscriptionGroups"/></label>
+				<f:for each="{allSubscriptionGroups}" as="subscriptionGroup" iteration="i">
+					<div>
+						<f:form.checkbox multiple="1" property="subscriptionGroups" id="subscriptionGroup{i.cycle}" value="{subscriptionGroup.uid}" />
+						<label for="subscriptionGroup{i.cycle}">{subscriptionGroup.name}</label>
+					</div>
+				</f:for>
+			</fieldset>
+		</div>
+
+		<f:form.submit value="{f:translate(key: 'subscription.form.button.update')}"/>
+		<button type="submit" class="btn-outline" formaction="{f:uri.action(action: 'unsubscribe', arguments: {email: subscriber.email})}"><f:translate key="subscription.form.button.unsubscribe"/></button>
+	</f:form>
+</div>
 </html>
