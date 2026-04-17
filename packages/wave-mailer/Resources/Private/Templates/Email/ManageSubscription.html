@@ -1,12 +1,43 @@
-<f:layout name="SystemEmail" />
+<f:layout name="Pages/Default" />
 
 <f:section name="Subject">
 	<f:translate key="manageSubscription.subject"></f:translate>
 </f:section>
 
 <f:section name="Main">
-	<p>
-		Please open the following link to manage your subscription:
-		<f:link.action pluginName="ManageSubscription" pageUid="{settings.manageSubscriptionPage}" controller="ManageSubscription" action="manage" arguments="{subscriber: subscriber, manageSubscriptionToken: subscriber.manageSubscriptionToken}">Manage Subscription</f:link.action>
-	</p>
+	<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+		<tbody>
+		<tr>
+			<td valign="top" style="padding:0 0 16px 0;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.6;color:#444444;">
+				<f:if condition="{subscriber.firstName}">
+					<f:then><f:translate key="email.greeting.withName" arguments="{0: subscriber.firstName}"/></f:then>
+					<f:else><f:translate key="email.greeting"/></f:else>
+				</f:if>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" style="padding:0 0 24px 0;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.6;color:#444444;">
+				<f:translate key="manageSubscriptionEmail.body"/>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" style="padding:0 0 32px 0;">
+				<table role="presentation" cellpadding="0" cellspacing="0" border="0">
+					<tbody>
+					<tr>
+						<td align="center" valign="middle" bgcolor="#333333" style="background-color:#333333;border-radius:5px;">
+							<f:link.action pluginName="ManageSubscription" pageUid="{settings.manageSubscriptionPage}" controller="ManageSubscription" action="manage" arguments="{subscriber: subscriber, manageSubscriptionToken: subscriber.manageSubscriptionToken}" style="display:inline-block;padding:12px 28px;color:#ffffff;font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;text-decoration:none;border-radius:5px;mso-padding-alt:0;"><f:translate key="manageSubscriptionEmail.button.manage"/></f:link.action>
+						</td>
+					</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" style="font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.6;color:#444444;">
+				<f:translate key="email.bestRegards"/>
+			</td>
+		</tr>
+		</tbody>
+	</table>
 </f:section>
