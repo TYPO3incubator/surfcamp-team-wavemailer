@@ -198,5 +198,30 @@
                 <source>Displays the number of subscribers per subscription group.</source>
             </segment>
         </unit>
+        <unit id="tx_wavemailer_domain_model_linkclick">
+            <segment>
+                <source>Link Click</source>
+            </segment>
+        </unit>
+        <unit id="tx_wavemailer_domain_model_linkclick.newsletter">
+            <segment>
+                <source>Newsletter (Page ID)</source>
+            </segment>
+        </unit>
+        <unit id="tx_wavemailer_domain_model_linkclick.link">
+            <segment>
+                <source>Clicked Link</source>
+            </segment>
+        </unit>
+        <unit id="tx_wavemailer_domain_model_linkclick.time">
+            <segment>
+                <source>Time of Click</source>
+            </segment>
+        </unit>
+        <unit id="tx_wavemailer_domain_model_linkclick.target_pid">
+            <segment>
+                <source>Target Page ID</source>
+            </segment>
+        </unit>
     </file>
 </xliff>

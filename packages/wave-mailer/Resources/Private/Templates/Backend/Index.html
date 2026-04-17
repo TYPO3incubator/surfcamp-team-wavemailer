@@ -1,0 +1,229 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+
+<f:layout name="Module" />
+
+<f:section name="Content">
+	<style>
+		.tx-wavemailer-dashboard {
+			--primary: #2c5e77;
+			--primary-light: #e4f0f5;
+			--accent: #ff8c00;
+			--text: #333;
+			--bg: #f4f7f6;
+			--card-bg: #fff;
+			--shadow: 0 4px 6px rgba(0,0,0,0.1);
+			font-family: sans-serif;
+			color: var(--text);
+			padding: 20px;
+		}
+
+		.tx-wavemailer-dashboard h1 {
+			color: var(--primary);
+			margin-bottom: 30px;
+			border-bottom: 2px solid var(--primary);
+			padding-bottom: 10px;
+		}
+
+		wave-mailer-newsletter-card {
+			display: block;
+		}
+
+		.newsletter-card {
+			background: var(--card-bg);
+			border-radius: 8px;
+			box-shadow: var(--shadow);
+			margin-bottom: 20px;
+			overflow: hidden;
+		}
+
+		.newsletter-header {
+			background-color: var(--primary);
+			color: white;
+			padding: 15px 20px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			cursor: pointer;
+			transition: background-color 0.2s;
+		}
+
+		.newsletter-header:hover {
+			background-color: #357391;
+		}
+
+		.newsletter-header h2 {
+			margin: 0;
+			font-size: 1.2rem;
+			color: white;
+		}
+
+		.click-badge {
+			background: var(--accent);
+			padding: 4px 12px;
+			border-radius: 20px;
+			font-size: 0.85rem;
+			font-weight: bold;
+			margin-right: 15px;
+		}
+
+		.newsletter-content {
+			padding: 0 20px;
+			max-height: 0;
+			overflow: hidden;
+			transition: max-height 0.3s ease-out, padding 0.3s ease;
+		}
+
+		.newsletter-content.active {
+			max-height: 2000px;
+			padding: 20px;
+			transition: max-height 0.5s ease-in, padding 0.3s ease;
+		}
+
+		.newsletter-content h3 {
+			margin-top: 0;
+			color: var(--primary);
+			border-bottom: 1px solid var(--primary-light);
+			padding-bottom: 5px;
+		}
+
+		.link-table {
+			width: 100%;
+			border-collapse: collapse;
+			margin-top: 15px;
+		}
+
+		.link-table th {
+			text-align: left;
+			background-color: var(--primary-light);
+			padding: 12px;
+			border-bottom: 2px solid var(--primary);
+		}
+
+		.link-table td {
+			padding: 12px;
+			border-bottom: 1px solid #eee;
+		}
+
+		.link-url {
+			display: inline-flex;
+			flex-direction: column;
+			max-width: 600px;
+			color: var(--primary);
+			text-decoration: none;
+			font-weight: 500;
+			vertical-align: middle;
+		}
+
+		.link-url:hover {
+			text-decoration: underline;
+		}
+
+		.link-text {
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+
+		.link-subtitle {
+			font-size: 0.8rem;
+			color: #666;
+			font-weight: normal;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+
+		.count-cell {
+			font-weight: bold;
+			text-align: right;
+			width: 100px;
+			font-size: 1.1rem;
+		}
+
+		.no-links {
+			color: #888;
+			font-style: italic;
+			padding: 10px 0;
+		}
+
+		.chevron {
+			display: inline-block;
+			transition: transform 0.3s;
+			font-size: 0.8rem;
+		}
+
+		.newsletter-header.active .chevron {
+			transform: rotate(180deg);
+		}
+	</style>
+
+	<div class="tx-wavemailer-dashboard">
+		<h1>WaveMailer Newsletter Dashboard</h1>
+		<f:if condition="{newsletters}">
+			<f:then>
+				<f:for each="{newsletters}" as="newsletter" iteration="it">
+					<wave-mailer-newsletter-card>
+						<div class="newsletter-card">
+							<div class="newsletter-header">
+								<h2>{newsletter.page.title} <small style="opacity: 0.8; font-size: 0.8rem;">(UID: {newsletter.page.uid})</small></h2>
+								<div>
+									<span class="click-badge">{newsletter.totalClicks} Gesamt-Klicks</span>
+									<span class="chevron">▼</span>
+								</div>
+							</div>
+							<div class="newsletter-content">
+							<h3>Link-Statistik</h3>
+							<f:if condition="{newsletter.linkStats}">
+								<f:then>
+									<table class="link-table">
+										<thead>
+											<tr>
+												<th>Link URL</th>
+												<th class="count-cell">Klicks</th>
+											</tr>
+										</thead>
+										<tbody>
+											<f:for each="{newsletter.linkStats}" as="stat">
+												<tr>
+													<td>
+														<a href="{f:if(condition: stat.backendUrl, then: stat.backendUrl, else: stat.url)}" 
+														   target="{f:if(condition: stat.backendUrl, then: '_self', else: '_blank')}" 
+														   class="link-url" title="{stat.url}">
+															<f:if condition="{stat.title}">
+																<f:then>
+																	<span class="link-text">{stat.title}</span>
+																	<span class="link-subtitle">{stat.url}</span>
+																</f:then>
+																<f:else>
+																	<span class="link-text">{stat.url}</span>
+																</f:else>
+															</f:if>
+														</a>
+													</td>
+													<td class="count-cell">{stat.count}</td>
+												</tr>
+											</f:for>
+										</tbody>
+									</table>
+								</f:then>
+								<f:else>
+									<p class="no-links">Es wurden keine Links im Content dieses Newsletters gefunden.</p>
+								</f:else>
+							</f:if>
+						</div>
+					</div>
+					</wave-mailer-newsletter-card>
+				</f:for>
+			</f:then>
+			<f:else>
+				<div style="background: white; padding: 20px; border-radius: 8px; box-shadow: var(--shadow);">
+					<p>Keine Newsletter (Doktype 116) gefunden.</p>
+				</div>
+			</f:else>
+		</f:if>
+	</div>
+
+</f:section>
+
+</html>

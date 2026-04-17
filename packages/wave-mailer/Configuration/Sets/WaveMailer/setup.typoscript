@@ -8,6 +8,22 @@ lib.contentElement {
 	partialRootPaths.20 = EXT:wave_mailer/Resources/Private/Partials/
 }
 
+lib.parseFunc_wavemailer < lib.parseFunc_RTE
+
+lib.parseFunc_wavemailer {
+	tags {
+		a = TEXT
+		a {
+			current = 1
+			typolink {
+				useCacheHash = 1
+				additionalParams.data = TSFE:id
+				additionalParams.wrap = &tx_wavemailer[track]=1&tx_wavemailer[pid]=|
+			}
+		}
+	}
+}
+
 tt_content {
 	wavemailer_textmedia =< lib.contentElement
 	wavemailer_textmedia {
@@ -21,7 +37,6 @@ tt_content {
 		}
 	}
 }
-
 plugin.tx_wavemailer {
 	view {
 		templateRootPaths {

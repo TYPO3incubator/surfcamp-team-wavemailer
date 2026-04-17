@@ -53,7 +53,7 @@
     "typo3/cms-workspaces": "@dev",
     "typo3/theme-camino": "@dev",
     "beffp/wave-mailer": "dev-main",
-    "helhum/typo3-console": "^8.3"
+    "helhum/typo3-console": "^8.3",
   },
   "config": {
     "allow-plugins": {

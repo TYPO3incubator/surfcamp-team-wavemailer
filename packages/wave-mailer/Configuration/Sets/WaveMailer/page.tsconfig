@@ -1,1 +1,3 @@
 @import './PageTsConfig/*.tsconfig'
+
+templates.beffp/wave-mailer.100 = beffp/wave-mailer:Resources/Private/Backend/

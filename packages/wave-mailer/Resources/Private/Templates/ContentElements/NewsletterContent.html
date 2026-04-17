@@ -57,7 +57,7 @@
 <f:section name="EmailText">
     <f:render partial="Header/All" arguments="{_all}" />
     <f:if condition="{data.bodytext}">
-        <f:format.html>{data.bodytext}</f:format.html>
+        <f:format.html parseFuncTSPath="lib.parseFunc_wavemailer">{data.bodytext}</f:format.html>
     </f:if>
 </f:section>
 
